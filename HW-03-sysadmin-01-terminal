@@ -3,7 +3,10 @@
 3. cmd
 4. Ubuntu 20.04 в VirtualBox посредством Vagrant запущена 
 5. Ознакомился с графическим интерфейсом VirtualBox. По умолчанию выделено cpu: 2, mem: 1024
-
+6. Ознакомился. Сменил имя машины на my_vag_vm
+      config.vm.provider "virtualbox" do |v|
+        v.name = "my_vag_vm"
+      end
 
 
 
