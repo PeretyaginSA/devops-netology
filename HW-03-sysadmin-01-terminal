@@ -12,6 +12,7 @@
             v.memory = 2048
             v.cpus = 2
       end
-
-
+   работал в файле "Vagrantfile"
+7. Выполнено
+8. 
 
