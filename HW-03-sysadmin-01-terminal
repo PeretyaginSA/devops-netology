@@ -7,7 +7,11 @@
       config.vm.provider "virtualbox" do |v|
         v.name = "my_vag_vm"
       end
-
+   и добавил памяти 
+      config.vm.provider "virtualbox" do |v|
+            v.memory = 2048
+            v.cpus = 2
+      end
 
 
 
