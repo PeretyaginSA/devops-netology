@@ -9,3 +9,24 @@
   vagrant  pts/0        2022-07-07 15:05 (10.0.2.2)
   vagrant  pts/1        2022-07-07 15:17 (10.0.2.2)
 5. 
+vagrant@vagrant:~$ cat file.sed 
+test_123
+555_123
+777   
+Hello World!
+vagrant@vagrant:~$ cat file.sed-out 
+cat: file.sed-out: No such file or directory
+vagrant@vagrant:~$ cat <file.sed >file.sed-out
+vagrant@vagrant:~$ cat file.sed-out 
+test_123 
+555_123
+777   
+Hello World!
+6. 
+
+
+
+7. 
+
+
+
