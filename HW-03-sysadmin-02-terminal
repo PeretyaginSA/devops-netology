@@ -26,7 +26,8 @@ Hello World!
 
 
 
-7. 
+7. Создастся дескриптор fd 5 и перенаправиться в stdout, echo netology > /proc/$$/fd/5 выведет "netology", 
+   а в новой сессии будет ошибка -bash: /proc/3487/fd/5: No such file or directory
 
 
 
