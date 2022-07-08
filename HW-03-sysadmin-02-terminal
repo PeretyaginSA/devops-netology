@@ -1,30 +1,24 @@
 1. type cd. Команда cd - это встроиная команда она работает внутри сессии bash  ?????????????
+
 2. Какая альтернатива без pipe команде grep <some_string> <some_file> | wc -l
   wc -l используется для подсчета количества строк в файле
   выведите количество совпадающих строк
   grep <some_string> <some_file> -c выведет количество совпавших срок
+  
 3. pstree -p
   systemd(1)
+  
 4. la -l test123 2>/dev/pts/1
   vagrant  pts/0        2022-07-07 15:05 (10.0.2.2)
   vagrant  pts/1        2022-07-07 15:17 (10.0.2.2)
-5. 
-vagrant@vagrant:~$ cat file.sed 
-test_123
-555_123
-777   
-Hello World!
-vagrant@vagrant:~$ cat file.sed-out 
-cat: file.sed-out: No such file or directory
-vagrant@vagrant:~$ cat <file.sed >file.sed-out
-vagrant@vagrant:~$ cat file.sed-out 
-test_123 
-555_123
-777   
-Hello World!
-6. 
+  
+5. cat < 123.txt > 321.txt
+-bash: 123.txt: No such file or directory
+vagrant@vagrant:~$ cat 321.txt
+cat: 321.txt: No such file or directory
 
-
+6. В графическом режиме сочетанием клавиш Ctrl + Alt + F3 запустил новую сессию, командой who увидел её и передал в неё команду echo
+echo Hello tty3 >/dev/tty/3. В tty3 увидел вывод Hello tty3
 
 7. Создастся дескриптор fd 5 и перенаправиться в stdout, echo netology > /proc/$$/fd/5 выведет "netology", 
    а в новой сессии будет ошибка -bash: /proc/3487/fd/5: No such file or directory
