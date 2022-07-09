@@ -20,8 +20,12 @@ cat: 321.txt: No such file or directory
 6. В графическом режиме сочетанием клавиш Ctrl + Alt + F3 запустил новую сессию, командой who увидел её и передал в неё команду echo
 echo Hello tty3 >/dev/tty/3. В tty3 увидел вывод Hello tty3
 
-7. Создастся дескриптор fd 5 и перенаправиться в stdout, echo netology > /proc/$$/fd/5 выведет "netology", 
+7. bash 5>&1 Создастся дескриптор fd 5 и перенаправиться в stdout, echo netology > /proc/$$/fd/5 выведет "netology", 
    а в новой сессии будет ошибка -bash: /proc/3487/fd/5: No such file or directory
+   
+8. vagrant@vagrant:~$ ls -l 123 7>&2 2>&1 1>&7 | grep dir
+   ls: cannot access '123': No such file or directory
+   
+9. Команда cat /proc/$$/environ выведет переменные окружения этот же результат посмотрим командой env
 
-
-
+10. 
