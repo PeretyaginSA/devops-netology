@@ -38,14 +38,18 @@ grep sse /proc/cpuinfo
 
 12. По умолчанию для ssh tty не выделяется
 man ssh -t принудительное выделение псевдотерминалов
-ssh -t localhost 'tty'
+vagrant@vagrant:~$ ssh -t localhost 'tty'
+vagrant@localhost's password:
 
-13. 
+13. Была ошибка /proc/sys/kernel/yama/ptrace_scope решилось sysctl -w kernel.yama.ptrace_scope=0
+Запустил ping -c 5 8.8.8.8 сразу остановил его ctrl + z затем
+vagrant@vagrant:~$ jobs -l
+[1]+  2013 Stopped                 ping -c 5 8.8.8.8
+vagrant@vagrant:~$ screen
+vagrant@vagrant:~$ reptyr 2013
+vagrant@vagrant:~$ 64 bytes from 8.8.8.8: icmp_seq=2 ttl=106 time=19.5 ms
 
-
-
-
-
+14. 
 
 
 
