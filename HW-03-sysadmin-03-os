@@ -5,10 +5,11 @@
   file /usr/share/misc/magic.mgc
   ../../lib/file/magic.mgc
 
-3. запустил пинг в фоне tail -f read_something.ry &
+3. запустил в фоне tail -f read_something.ry &
  затем удалил read_something.ry - rm read_something.ry
  увидел что файл (deleted) и дескриптор 3 командой sudo lsof -p 2244
  и перезаписал содержимое командой echo '1' > /proc/2244/fd/3
+ cat /proc/2244/fd/3 выдал '1'
  
 4. зомби-процессы - несуществующие процессы, занимающие место в таблице системных процессов. 
  Таблица процессов состоит из идентификатора процесса,
