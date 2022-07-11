@@ -18,7 +18,22 @@
 другие процессы не могут использовать PID, пока процесс-зомби не остановится.
 Ресурсов не занимает
 
-5. 
+5. vagrant@vagrant:/usr/sbin$ sudo /usr/sbin/opensnoop-bpfcc
+PID    COMM               FD ERR PATH
+633    irqbalance          6   0 /proc/interrupts
+633    irqbalance          6   0 /proc/stat
+633    irqbalance          6   0 /proc/irq/20/smp_affinity
+633    irqbalance          6   0 /proc/irq/0/smp_affinity
+633    irqbalance          6   0 /proc/irq/1/smp_affinity
+633    irqbalance          6   0 /proc/irq/8/smp_affinity
+633    irqbalance          6   0 /proc/irq/12/smp_affinity
+633    irqbalance          6   0 /proc/irq/14/smp_affinity
+633    irqbalance          6   0 /proc/irq/15/smp_affinity
+930    vminfo              4   0 /var/run/utmp
+629    dbus-daemon        -1   2 /usr/local/share/dbus-1/system-services
+629    dbus-daemon        20   0 /usr/share/dbus-1/system-services
+629    dbus-daemon        -1   2 /lib/dbus-1/system-services
+629    dbus-daemon        20   0 /var/lib/snapd/dbus-1/system-services/
 
 6. Из UNAME(2) Part of the utsname information is also accessible via /proc/sys/kernel/{ostype, hostname, osrelease, version, domainname}.
 
