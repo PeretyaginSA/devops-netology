@@ -56,3 +56,21 @@ node_disk_written_bytes_total
 3. Выполнено
 
 ![image](https://user-images.githubusercontent.com/106968319/178814506-e571a77f-ad1f-47fd-b948-c4837fada9b2.png)
+
+4. Использовал dmesg | grep "Hypervisor detected"
+[    0.000000] Hypervisor detected: KVM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
