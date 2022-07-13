@@ -57,10 +57,14 @@ node_disk_written_bytes_total
 
 ![image](https://user-images.githubusercontent.com/106968319/178814506-e571a77f-ad1f-47fd-b948-c4837fada9b2.png)
 
-4. Использовал dmesg | grep "Hypervisor detected"
+4. На физической машине не было возможности проверить.
+В vagrand'е отображается как 'KVM'
+vagrant@vagrant:~$  dmesg | grep "Hypervisor detected"
 [    0.000000] Hypervisor detected: KVM
+в VMware отображается один в один 
+0.000000] Hypervisor detected: VMware
 
-
+5. 
 
 
 
