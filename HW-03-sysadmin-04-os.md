@@ -94,13 +94,34 @@ root@vagrant:/# ps
       2 pts/1    00:00:00 bash
      13 pts/1    00:00:00 ps
 
-7. 
+7. fork bomb
 
+:()         # Определяет функцию ":". Это не требует никаких аргументов.
+{ ... };    # Тело функции.
+:           # Вызовите функцию ":", которая только что была определена.
 
+стабилизироваться помог: cgroup: fork rejected by pids controller in /user.slice/user-1000.slice/session-5.scope
 
+Cgroups - это способ ограничить ресурсы процессов внутри конкретной cgroup
 
+ulimit -a
 
+vagrant@vagrant:~$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 7580
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 7580  -----------  максимальное количество процессов
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
 
-
-
-
+ulimit -u можно уменьшить количество процессов
