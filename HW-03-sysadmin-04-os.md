@@ -77,9 +77,24 @@ fs nr_open - максимальное количество файлов, кот�
 -n максимальное количество открытых файловых дескрипторов
 
 6. 
+sudo -i
+unshare -f --pid --mount-proc /usr/bin/sleep 1h &
+root@vagrant:~# ps
+    PID TTY          TIME CMD
+   1570 pts/1    00:00:00 sudo
+   1571 pts/1    00:00:00 bash
+   1583 pts/1    00:00:00 unshare
+   1584 pts/1    00:00:00 sleep
+   1585 pts/1    00:00:00 ps
 
+nsenter --target 1584 --pid --mount
+root@vagrant:/# ps
+    PID TTY          TIME CMD
+      1 pts/1    00:00:00 sleep
+      2 pts/1    00:00:00 bash
+     13 pts/1    00:00:00 ps
 
-
+7. 
 
 
 
