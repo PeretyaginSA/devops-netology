@@ -64,6 +64,47 @@ vgcreate vg01 /dev/md0 /dev/md1
 
 10. Создайте LV размером 100 Мб, указав его расположение на PV с RAID0.
 
+sudo lvcreate -L 100M -n ln_vg01 vg01 /dev/md0
+
+
+
+![image](https://user-images.githubusercontent.com/106968319/179367089-7892443f-26a3-4db0-b55b-068beba58de4.png)
+
+
+11. Создайте mkfs.ext4 ФС на получившемся LV.
+
+mkfs.ext4 /dev/vg01/ln_vg01
+
+
+![image](https://user-images.githubusercontent.com/106968319/179367149-b9597cda-a26b-47eb-ae60-656784e64c51.png)
+
+
+12. Смонтируйте этот раздел в любую директорию, например, /tmp/new.
+
+mkdir /tmp/new
+sudo mount /dev/vg01/ln_vg01 /tmp/new/
+
+
+![image](https://user-images.githubusercontent.com/106968319/179367341-b39bdc13-1599-42a4-94e5-e36143481d67.png)
+
+
+13. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
