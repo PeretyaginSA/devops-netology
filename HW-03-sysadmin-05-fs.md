@@ -88,14 +88,23 @@ sudo mount /dev/vg01/ln_vg01 /tmp/new/
 ![image](https://user-images.githubusercontent.com/106968319/179367341-b39bdc13-1599-42a4-94e5-e36143481d67.png)
 
 
-13. 
+13. Поместите туда тестовый файл, например wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz.
+
+Выполнено
+
+
+![image](https://user-images.githubusercontent.com/106968319/179367526-83260f11-9e14-45fd-b574-8a5cc0393606.png)
 
 
 
+14. Прикрепите вывод lsblk.
+
+
+![image](https://user-images.githubusercontent.com/106968319/179367568-87a98751-6975-4095-8919-33ac1c61297b.png)
 
 
 
-
+15. 
 
 
 
