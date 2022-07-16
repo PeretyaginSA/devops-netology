@@ -45,7 +45,29 @@ sudo mdadm --create --verbose /dev/md0 --level=0 --raid-devices=2 /dev/sdb2 /dev
 ![image](https://user-images.githubusercontent.com/106968319/179361279-202ed6e2-eeeb-4d15-ae03-731bfc44894e.png)
 
 
-8.  
+8. Создайте 2 независимых PV на получившихся md-устройствах.
+
+sudo pvcreate /dev/md0
+sudo pvcreate /dev/md1
+
+
+![image](https://user-images.githubusercontent.com/106968319/179361458-2498add0-8579-47cf-9177-c3fc433ec227.png)
+
+
+9. Создайте общую volume-group на этих двух PV.
+
+vgcreate vg01 /dev/md0 /dev/md1
+
+
+![image](https://user-images.githubusercontent.com/106968319/179362537-c509c4af-e146-40e0-941b-bfaec932f110.png)
+
+
+10. Создайте LV размером 100 Мб, указав его расположение на PV с RAID0.
+
+
+
+
+
 
 
 
