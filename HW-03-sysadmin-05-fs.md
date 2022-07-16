@@ -19,8 +19,10 @@
 ![image](https://user-images.githubusercontent.com/106968319/179359013-bf51234b-8c7c-43a2-aa4d-5834e9077488.png)
 
 
+5. Используя sfdisk, перенесите данную таблицу разделов на второй диск.
+ sudo sfdisk -d /dev/sdb | sudo sfdisk /dev/sdc
 
-
+![image](https://user-images.githubusercontent.com/106968319/179359336-acb49fa8-976a-4e11-9551-50af66a0415d.png)
 
 
 
