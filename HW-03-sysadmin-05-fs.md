@@ -93,32 +93,57 @@ sudo mount /dev/vg01/ln_vg01 /tmp/new/
 Выполнено
 
 
-![image](https://user-images.githubusercontent.com/106968319/179367526-83260f11-9e14-45fd-b574-8a5cc0393606.png)
+![image](https://user-images.githubusercontent.com/106968319/179368102-3500797c-dfca-49aa-bd3f-da1c388ddee5.png)
 
 
 
 14. Прикрепите вывод lsblk.
 
 
-![image](https://user-images.githubusercontent.com/106968319/179367568-87a98751-6975-4095-8919-33ac1c61297b.png)
+![image](https://user-images.githubusercontent.com/106968319/179368122-937ee950-24cd-45f7-8453-df724becdef9.png)
 
 
 
-15. 
+15. Протестируйте целостность файла:
+
+
+![image](https://user-images.githubusercontent.com/106968319/179368151-b2ee33c6-b965-4764-ac46-e97178c19fbd.png)
+
+
+16. Используя pvmove, переместите содержимое PV с RAID0 на RAID1.
+
+sudo pvmove -n /dev/vg01/ln_vg01 /dev/md0 /dev/md1
+
+
+![image](https://user-images.githubusercontent.com/106968319/179368500-e8f76d27-2ace-436f-a139-93a36a92d590.png)
+![image](https://user-images.githubusercontent.com/106968319/179368509-eb43f80f-dc1e-4ab6-88ee-2ffb0e384a5c.png)
+
+
+17. Сделайте --fail на устройство в вашем RAID1 md.
+
+sudo mdadm --fail /dev/md1 /dev/sdb1
+
+
+![image](https://user-images.githubusercontent.com/106968319/179368860-0646c11c-0908-4583-8672-11f7a181cdca.png)
+
+
+сделал cat /proc/mdstat
+![image](https://user-images.githubusercontent.com/106968319/179368906-bb134e95-efeb-43da-9c5a-c52dae4fcef5.png)
+sdb1 отвалился
+
+
+18. Подтвердите выводом dmesg, что RAID1 работает в деградированном состоянии.
 
 
 
+![image](https://user-images.githubusercontent.com/106968319/179368999-9aa9ee3e-c5c6-49be-85ec-3045d8068872.png)
+
+
+19. Протестируйте целостность файла, несмотря на "сбойный" диск он должен продолжать быть доступен:
+
+
+![image](https://user-images.githubusercontent.com/106968319/179369029-465b3fea-5a4a-4307-aba3-8519286211e4.png)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+20. Выполнено
