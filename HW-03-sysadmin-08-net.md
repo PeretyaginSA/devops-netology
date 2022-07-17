@@ -50,4 +50,5 @@ netstat -uan
 5. Используя diagrams.net, создайте L3 диаграмму вашей домашней сети или любой другой сети, с которой вы работали.
 
 
+![image](https://user-images.githubusercontent.com/106968319/179398882-dbc7c717-83e0-4fcc-8121-f3934a40a765.png)
 
