@@ -7,8 +7,12 @@
 2. Создайте dummy0 интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.
 
 ip link add dummy0 type dummy
+
 ip addr add 192.168.255.1 dev dummy0
+
 ip link set dummy0 up
+
+
 
 
 ip route add 172.16.1.0/24 via 192.168.255.1
