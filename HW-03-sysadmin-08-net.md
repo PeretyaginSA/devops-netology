@@ -26,20 +26,23 @@ ip route add 172.16.100.0/24 via 10.0.2.2
 
 3. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
 
+netstat -tna
+
+![image](https://user-images.githubusercontent.com/106968319/179396789-9b3cf293-3e25-403f-ab57-3a80b71e73a7.png)
+
+используются - ssh- 22 и dns- 53
 
 
 
+4. Проверьте используемые UDP сокеты в Ubuntu, какие протоколы и приложения используют эти порты?
+
+netstat -uan
 
 
+![image](https://user-images.githubusercontent.com/106968319/179396958-1d1cf0f9-43cf-4b7a-a047-c60ca3f0f67e.png)
 
 
-
-
-
-
-
-
-
+используются - dns- 53 и dhcp (bootpc) - 68
 
 
 
