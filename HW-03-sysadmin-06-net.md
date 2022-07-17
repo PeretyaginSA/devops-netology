@@ -34,106 +34,39 @@ Connection closed by foreign host.
 Зная свой ip, используя утилиту whois, увидел имя провайдера и номер автономной системы которую он использует
 
 
+5. Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой traceroute
 
+traceroute -An 8.8.8.8
 
+![image](https://user-images.githubusercontent.com/106968319/179388693-3de5c8b8-b327-4c11-a948-a6a917b1f377.png)
 
 
+6. Повторите задание 5 в утилите mtr. На каком участке наибольшая задержка - delay?
 
+mtr -zn 8.8.8.8
 
 
+![image](https://user-images.githubusercontent.com/106968319/179389009-82d3ab97-da9f-4afe-9e79-9550b5b8cd5e.png)
 
+наибольшая задержка на 9 хопе
 
 
+7. Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи? воспользуйтесь утилитой dig
 
+dig NS dns.google
 
+![image](https://user-images.githubusercontent.com/106968319/179389426-9e808925-678d-4301-bae7-c1a2b887faec.png)
 
 
+dig A dns.google
 
+![image](https://user-images.githubusercontent.com/106968319/179389439-7fd4c7f3-3b26-4aad-bf44-df0f27e14c99.png)
 
 
+8. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой dig
 
+dig -x 8.8.8.8
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/106968319/179389694-e8a3c001-0201-4a18-8fd8-2601c7c11324.png)
 
 
