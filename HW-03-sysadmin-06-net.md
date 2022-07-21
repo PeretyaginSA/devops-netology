@@ -1,20 +1,37 @@
 1. Подключитесь утилитой телнет к сайту stackoverflow.com telnet stackoverflow.com 80 
 отправьте HTTP запрос
+
+
+Действительно неправильно вводил параметры
+
+301 Moved Permanently- Ресурс перемещен навсегдаю. Документ уже не используется сервером, а ссылка перенаправляет на другую страницу
+
+vagrant@vagrant:~$ telnet stackoverflow.com 80
+Trying 151.101.129.69...
+Connected to stackoverflow.com.
+Escape character is '^]'.
 GET /questions HTTP/1.0
 HOST: stackoverflow.com
-[press enter]
-[press enter]
 
-Полученный ответ:
-
-HTTP/1.1 400 Bad Request
+HTTP/1.1 301 Moved Permanently
+cache-control: no-cache, no-store, must-revalidate
+location: https://stackoverflow.com/questions
+x-request-guid: 22e81d7a-8092-4c04-8aed-8a440e69e06e
+feature-policy: microphone 'none'; speaker 'none'
+content-security-policy: upgrade-insecure-requests; frame-ancestors 'self' https://stackexchange.com
+Accept-Ranges: bytes
+Date: Thu, 21 Jul 2022 15:25:45 GMT
+Via: 1.1 varnish
 Connection: close
-Content-Length: 0
-Connection closed by foreign host.
+X-Served-By: cache-lin2290031-LIN
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1658417146.598715,VS0,VE104
+Vary: Fastly-SSL
+X-DNS-Prefetch-Control: off
+Set-Cookie: prov=eb793f23-ff2d-ab90-9179-49cd2b2db900; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly
 
-400 Bad Request говорит о том, что возникла проблема на стороне пользователя
-код 400 напрямую связан с клиентом (браузером, к примеру) и намекает на то, 
-что отправленный запрос со стороны пользователя приводит к сбою еще до того, как его обработает сервер
+Connection closed by foreign host.
 
 2. Повторите задание 1 в браузере, используя консоль разработчика F12.
 
