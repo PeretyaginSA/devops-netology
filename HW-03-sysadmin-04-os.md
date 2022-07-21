@@ -5,8 +5,8 @@ sudo nano /lib/systemd/system/node_exporter.service
 Description=node_exporter
 
 [Service]
-ExecStart=/usr/local/bin/node_exporter/node_exporter
-EnvironmentFile=/etc/default/node_exporter
+ExecStart=/usr/local/bin/node_exporter/node_exporter $TEST
+!!!!!!!!! EnvironmentFile=/etc/default/node_exporter т.е. здесь мы можем задать переменную $TEST="-a -h" и передать её в node_exporter
 Type=simple
 
 [Install]
