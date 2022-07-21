@@ -35,6 +35,7 @@ Connection closed by foreign host.
 
 2. Повторите задание 1 в браузере, используя консоль разработчика F12.
 
+Status Code: 307 Internal Redirect - Редирект на https
 
 ![image](https://user-images.githubusercontent.com/106968319/179388147-9d52131a-f987-4cd6-9b60-5b7cccc61bc0.png)
 
