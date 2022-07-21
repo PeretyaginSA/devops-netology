@@ -28,7 +28,7 @@ ip link set up eth0.100
  modprobe bonding
  ifconfig bond0 192.168.0.1 netmask 255.255.0.0
  ifenslave bond0 eth0 eth1
- bond-mode ...
+ bond-mode 0
  
 mode=0 (balance-rr)
 При этом методе объединения трафик распределяется по принципу «карусели»: пакеты по очереди направляются на сетевые карты объединённого интерфейса.
