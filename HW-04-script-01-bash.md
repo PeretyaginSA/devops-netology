@@ -52,14 +52,17 @@ done
 ### Ваш скрипт:
 #!/bin/bash
 
-IP=(192.168.0.1 173.194.222.113 87.250.250.242)
+#!/bin/bash
 
-for h in ${IP[@]}
+ip=(192.168.0.1 173.194.222.113 87.250.250.242)
+
+for h in ${ip[@]}
 do
 	for ((i=1; i < 6; i++))
 	do
 		nc -zvw 1 $h 80
-		echo $? > /home/ubuntu/DevOps-20/host.log
+	echo $(date) $h port 80 open >> /home/ubuntu/DevOps-20/host.log
+
 	done
 done
 
