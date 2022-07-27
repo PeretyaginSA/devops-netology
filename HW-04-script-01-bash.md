@@ -59,7 +59,7 @@ for h in ${IP[@]}
 do
 	for ((i=1; i < 6; i++))
 	do
-		NETCAT=`nc -zvw 1 $h 80`
+		nc -zvw 1 $h 80
 		echo $? > /home/ubuntu/DevOps-20/host.log
 	done
 done
