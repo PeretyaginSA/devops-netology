@@ -48,4 +48,66 @@ sudo nano /etc/apache2/sites-available/localhost.conf
 
 
 
-5. 
+5. Установите на Ubuntu ssh сервер, сгенерируйте новый приватный ключ. Скопируйте свой публичный ключ на другой сервер. Подключитесь к серверу по SSH-ключу.
+
+Установил ssh сервер - sudo apt install openssh-server
+
+Сгенерировал кльч - ssh-keygen
+
+Your identification has been saved in /home/vagrant/.ssh/id_rsa
+Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:o71TEwz+5cHdcwAKIfuUuPagH+Bm9n7fFl4vl+bG20Q vagrant@vagrant
+The key's randomart image is:
++---[RSA 3072]----+
+|    . o.  ..     |
+|     + o..  .    |
+|    o o..o + .   |
+|     +  . o B .  |
+|    = . T. + +  E|
+|   o = o .+ o .. |
+|    * + .. o o..o|
+|   + o .o. .o .*+|
+|     .+..o... +=o|
++----[SHA256]-----+
+
+
+Скопировал ключ а удаленный сервер - ssh-copy-id peretyaginsa@192.168.30.100
+
+Подключился - ssh peretyaginsa@192.168.30.100 и ввел пароль
+Number of key(s) added: 1
+Последующие подключение уже без пароля
+
+6. Переименуйте файлы ключей из задания 5. Настройте файл конфигурации SSH клиента, так чтобы вход на удаленный сервер осуществлялся по имени сервера.
+
+cd ~/.ssh/
+
+mv id_rsa mykey_rsa
+mv id_rsa.pub mykey_rsa.pub
+
+nano config
+Host devops
+HostName 192.168.30.100
+IdentityFile ~/.ssh/mykey_rsa
+User peretyaginsa
+Port 22
+
+Затем - ssh devops
+
+![image](https://user-images.githubusercontent.com/106968319/181610437-eeecdce7-347a-4d43-8806-1710aa9bb741.png)
+
+
+7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
+
+
+
+
+
+
+
+
+
+
+
+
+
