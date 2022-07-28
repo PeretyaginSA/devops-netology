@@ -99,13 +99,12 @@ Port 22
 
 7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
 
+sudo tcpdump -c 100 -w 0100.pcap -i eth0
 
 
 
 
-
-
-
+![image](https://user-images.githubusercontent.com/106968319/181618996-e2045a7a-26b6-4eeb-9864-fe240358f223.png)
 
 
 
