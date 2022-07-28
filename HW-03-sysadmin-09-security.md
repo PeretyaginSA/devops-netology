@@ -1,5 +1,11 @@
-1.
+1. Установите Bitwarden плагин для браузера. Зарегестрируйтесь и сохраните несколько паролей.
 
+Выполнено
+
+2. Установите Google authenticator на мобильный телефон. Настройте вход в Bitwarden акаунт через Google authenticator OTP.
+
+С Google authenticator знаком
+Выполнено
 
 
 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
@@ -27,7 +33,7 @@ sudo nano /etc/apache2/sites-available/localhost.conf
    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 </VirtualHost> 
  
-Создал тестовый сайт - sudo nano /var/www/localhost/index.html "<h1>it worked!</h1>"
+Создал тестовый сайт - sudo nano /var/www/localhost/index.html `<h1>it worked!</h1>`
  
 ![image](https://user-images.githubusercontent.com/106968319/181581083-1a33acdd-ba55-462e-b580-b5bc36de3c1d.png)
 
