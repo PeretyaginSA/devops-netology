@@ -4,7 +4,7 @@
 
 2. Установите Google authenticator на мобильный телефон. Настройте вход в Bitwarden акаунт через Google authenticator OTP.
 
-С Google authenticator знаком
+С Google authenticator знаком.
 Выполнено
 
 
