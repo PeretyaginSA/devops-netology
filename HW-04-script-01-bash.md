@@ -35,6 +35,7 @@ done
 
 ### Ваш скрипт:
 #!/bin/bash
+
 while ((1==1)) # добавлена ")"
 do
 	curl https://localhost:4757
