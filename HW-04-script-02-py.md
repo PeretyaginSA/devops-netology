@@ -63,12 +63,26 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import os
+import sys
+
+bash_command = ["cd " + sys.argv[1], "git status"]
+result_os = os.popen(' && '.join(bash_command)).read()
+#is_change = False
+for result in result_os.split('\n'):
+	if result.find('modified') != -1: 
+		prepare_result = result.replace('\tmodified:   ', '') 
+		print(os.getcwd() + '/' + sys.argv[1] + '/' + prepare_result)
+
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-???
+peretyaginsa@bhdevops:~$ ./my2.py sysadm-homeworks
+/home/peretyaginsa/sysadm-homeworks/04-script-02-py/README.md
+/home/peretyaginsa/sysadm-homeworks/README.md
 ```
 
 ## Обязательная задача 4
