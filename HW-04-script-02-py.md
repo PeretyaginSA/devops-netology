@@ -68,6 +68,7 @@ for result in result_os.split('\n'):
 
 import os
 import sys
+
 prepare_result=''
 
 if len(sys.argv) < 2:
