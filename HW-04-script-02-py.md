@@ -68,22 +68,48 @@ for result in result_os.split('\n'):
 
 import os
 import sys
+prepare_result=''
 
-bash_command = ["cd " + sys.argv[1], "git status"]
-result_os = os.popen(' && '.join(bash_command)).read()
-#is_change = False
-for result in result_os.split('\n'):
-	if result.find('modified') != -1: 
-		prepare_result = result.replace('\tmodified:   ', '') 
-		print(os.getcwd() + '/' + sys.argv[1] + '/' + prepare_result)
+if len(sys.argv) < 2:
+	print('СКРИПТ ЗАПУЩЕН БЕЗ АРГУМЕНТОВ, ИСПОЛЬЗУЕТСЯ ЛОКАЛЬНАЯ ДИРЕКТОРИЯ')
+	if not os.path.isdir(os.getcwd() + '/.git'):
+		print('НЕ ЯВЛЯЕТСЯ РЕПОЗИТОРИЕМ GIT!')
+		exit()
+	else:
+		bash_command = ["git status"]
+		result_os = os.popen(bash_command[0]).read()
+		for result in result_os.split('\n'):
+			if result.find('modified') != -1:
+				prepare_result = result.replace('\tmodified:   ', '')
+				print(os.getcwd() + '/' + prepare_result)
+else:
+	if not os.path.isdir(sys.argv[1] + '/.git'):
+		print('НЕ ЯВЛЯЕТСЯ РЕПОЗИТОРИЕМ GIT!')
+		exit()
+	else:
+		bash_command = ["cd " + sys.argv[1], "git status"]
+		result_os = os.popen(' && '.join(bash_command)).read()
+		for result in result_os.split('\n'):
+			if result.find('modified') != -1: 
+				prepare_result = result.replace('\tmodified:   ', '') 
+				print(os.getcwd() + '/' + sys.argv[1] + '/' + prepare_result)		
+		if prepare_result == '':
+				print('ИЗМЕНЕНИЙ НЕ НАЙДЕНО')
 
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-peretyaginsa@bhdevops:~$ ./my2.py sysadm-homeworks
+peretyaginsa@bhdevops:~$ ./my2.py                   # Локальная директория
+СКРИПТ ЗАПУЩЕН БЕЗ АРГУМЕНТОВ, ИСПОЛЬЗУЕТСЯ ЛОКАЛЬНАЯ ДИРЕКТОРИЯ
+НЕ ЯВЛЯЕТСЯ РЕПОЗИТОРИЕМ GIT!
+peretyaginsa@bhdevops:~$ ./my2.py test              # Обычныя директория
+НЕ ЯВЛЯЕТСЯ РЕПОЗИТОРИЕМ GIT!
+peretyaginsa@bhdevops:~$ ./my2.py sysadm-homeworks  # Репозиторий git с модификациями
 /home/peretyaginsa/sysadm-homeworks/04-script-02-py/README.md
 /home/peretyaginsa/sysadm-homeworks/README.md
+peretyaginsa@bhdevops:~$ ./my2.py devops-netology   # Репозиторий git без модификаций
+ИЗМЕНЕНИЙ НЕ НАЙДЕНО
 ```
 
 ## Обязательная задача 4
