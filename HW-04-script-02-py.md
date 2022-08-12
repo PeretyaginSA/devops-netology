@@ -49,6 +49,7 @@ for result in result_os.split('\n'):
         prepare_result = result.replace('\tmodified:   ', '')
         os.chdir(r"/home/peretyaginsa/sysadm-homeworks")
         print(os.getcwd() + '/' + prepare_result)
+	
 
 ```
 
