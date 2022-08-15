@@ -20,13 +20,13 @@
   Нужно найти и исправить все ошибки, которые допускает наш сервис
   
   ```json
-  {
-    "info" : "Sample JSON output from our service\t",
+{
+	"info" : "Sample JSON output from our service\t",
     "elements": [
         { 
-		"name" : "first",
-            	"type" : "server",
-            	"ip" : "7175"
+			"name" : "first",
+           	"type" : "server",
+           	"ip" : "7175"
         },
         {
                 "name" : "second",
