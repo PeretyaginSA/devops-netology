@@ -29,9 +29,9 @@
             	"ip" : "7175"
         },
         {
-            "name" : "second",
-            "type" : "proxy",
-            "ip : "71.78.22.43"
+                "name" : "second",
+                "type" : "proxy",
+                "ip" : "71.78.22.43"
         }
     ]
 }
