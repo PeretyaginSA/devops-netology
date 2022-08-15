@@ -118,12 +118,49 @@ peretyaginsa@bhdevops:~$ ./my2.py devops-netology   # Репозиторий git
 
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import socket
+from time import sleep
+
+
+i = 0
+
+sites = {'drive.google.com' : '0.0.0.0', 'mail.google.com' : '0.0.0.0', 'google.com' : '0.0.0.0'}
+
+while i <=5 :
+    for site,ip in sites.items():
+        ip_addr = socket.gethostbyname(site)
+        if ip != ip_addr:
+            sites.update({site:ip_addr})
+            print('[ERROR] '+site+ ' IP mismatch: ' +ip+ ' '+ip_addr)
+        else:
+            print(site+' - '+ip)
+
+    sleep(3)
+    i += 1
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-???
+[ERROR] drive.google.com IP mismatch: 0.0.0.0 74.125.205.194
+[ERROR] mail.google.com IP mismatch: 0.0.0.0 209.85.233.17
+[ERROR] google.com IP mismatch: 0.0.0.0 173.194.222.138
+drive.google.com - 74.125.205.194
+mail.google.com - 209.85.233.17
+[ERROR] google.com IP mismatch: 173.194.222.138 173.194.222.113
+drive.google.com - 74.125.205.194
+mail.google.com - 209.85.233.17
+[ERROR] google.com IP mismatch: 173.194.222.113 173.194.222.139
+drive.google.com - 74.125.205.194
+[ERROR] mail.google.com IP mismatch: 209.85.233.17 209.85.233.83
+[ERROR] google.com IP mismatch: 173.194.222.139 173.194.222.100
+drive.google.com - 74.125.205.194
+[ERROR] mail.google.com IP mismatch: 209.85.233.83 209.85.233.19
+[ERROR] google.com IP mismatch: 173.194.222.100 173.194.222.102
+drive.google.com - 74.125.205.194
+[ERROR] mail.google.com IP mismatch: 209.85.233.19 209.85.233.17
+[ERROR] google.com IP mismatch: 173.194.222.102 173.194.222.101
 ```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
