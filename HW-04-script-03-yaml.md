@@ -26,12 +26,12 @@
         { 
 		"name" : "first",
             	"type" : "server",
-            	"ip" : 7175",
+            	"ip" : "7175"
         },
         {
             "name" : "second",
             "type" : "proxy",
-            "ip : 71.78.22.43
+            "ip : "71.78.22.43
         }
     ]
 }
