@@ -66,7 +66,7 @@ with open(file_json, 'w') as fjson:
     json.dump(dump_result, fjson, indent=4)
 
 with open(file_yaml, 'w') as fyaml:
-    yaml.dump(dump_result, fyaml, sort_keys=False, default_flow_style=False)
+    yaml.dump(dump_result, fyaml)
 ```
 
 ### Вывод скрипта при запуске при тестировании:
@@ -94,7 +94,7 @@ with open(file_yaml, 'w') as fyaml:
 ]
 ```
 
-### yml-файл(ы), который(е) записал ваш скрипт:
+### yaml-файл(ы), который(е) записал ваш скрипт:
 ```yaml
 - Site: drive.google.com
   ip address: 64.233.162.194
