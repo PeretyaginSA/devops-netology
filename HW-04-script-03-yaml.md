@@ -43,12 +43,37 @@
 
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import socket
+import json
+import yaml
+
+file_json = "log.json"
+file_yaml = "log.yaml"
+
+sites = {'drive.google.com' : '', 'mail.google.com' : '', 'google.com' : ''}
+
+dump_result = []
+
+for site,ip in sites.items():
+    ip_addr = socket.gethostbyname(site)
+    sites.update({site:ip_addr})
+    dump_result.append({'Site' : site, 'ip address': ip_addr})
+    print(dump_result)
+
+with open(file_json, 'w') as fjson:
+    json.dump(dump_result, fjson, indent=4)
+
+with open(file_yaml, 'w') as fyaml:
+    yaml.dump(dump_result, fyaml, sort_keys=False, default_flow_style=False)
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-???
+[{'Site': 'drive.google.com', 'ip address': '64.233.162.194'}]
+[{'Site': 'drive.google.com', 'ip address': '64.233.162.194'}, {'Site': 'mail.google.com', 'ip address': '173.194.221.83'}]
+[{'Site': 'drive.google.com', 'ip address': '64.233.162.194'}, {'Site': 'mail.google.com', 'ip address': '173.194.221.83'}, {'Site': 'google.com', 'ip address': '173.194.222.113'}]
 ```
 
 ### json-файл(ы), который(е) записал ваш скрипт:
