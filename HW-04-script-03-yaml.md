@@ -96,7 +96,12 @@ with open(file_yaml, 'w') as fyaml:
 
 ### yml-файл(ы), который(е) записал ваш скрипт:
 ```yaml
-???
+- Site: drive.google.com
+  ip address: 64.233.162.194
+- Site: mail.google.com
+  ip address: 173.194.221.83
+- Site: google.com
+  ip address: 173.194.222.113
 ```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
