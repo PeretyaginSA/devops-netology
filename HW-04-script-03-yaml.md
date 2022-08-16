@@ -19,12 +19,12 @@
 ```
   Нужно найти и исправить все ошибки, которые допускает наш сервис
   
-  ```json
+```json
 {
 	"info" : "Sample JSON output from our service\t",
-    "elements": [
-        { 
-			"name" : "first",
+	"elements": [
+        {
+		"name" : "first",
            	"type" : "server",
            	"ip" : "7175"
         },
