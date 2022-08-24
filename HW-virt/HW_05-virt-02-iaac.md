@@ -38,6 +38,11 @@
 5.5.1
 ```
 
++ Vagrant
+```bash
+C:\HashiCorp\Vagrant>vagrant -v
+Vagrant 2.3.0
+```
 
 
 
