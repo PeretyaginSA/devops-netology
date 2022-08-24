@@ -45,8 +45,10 @@
 C:\HashiCorp\Vagrant>vagrant -v
 Vagrant 2.3.0
 ```
-
-
++ Ansible
+```bash
+123
+```
 
 ## Задача 4 (*)
 
