@@ -53,7 +53,7 @@ ansible 2.9.6
   configured module search path = ['/home/vagrant/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/lib/python3/dist-packages/ansible
   executable location = /usr/bin/ansible
-  python version = 3.8.10 (default, Mar 15 2022, 12:22:08) [GCC 9.4.0]
+  python version = 3.8.10 (default, Jun 22 2022, 20:18:18) [GCC 9.4.0]
 ```
 
 ## Задача 4 (*)
