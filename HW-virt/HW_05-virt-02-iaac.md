@@ -41,7 +41,7 @@
 
 
 + Vagrant
-```bash
+```cmd
 C:\HashiCorp\Vagrant>vagrant -v
 Vagrant 2.3.0
 ```
