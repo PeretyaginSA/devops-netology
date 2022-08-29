@@ -67,7 +67,42 @@ ansible 2.10.8
 `docker ps`
 
 
+***Ответ:***
 
+```bash
+ubuntu@ubuntu-virtual-machine:~$ sudo vagrant provision
+==> server1.netology: Running provisioner: ansible...
+    server1.netology: Running ansible-playbook...
 
+PLAY [nodes] *******************************************************************
 
+TASK [Gathering Facts] *********************************************************
+ok: [server1.netology]
+
+TASK [Create directory for ssh-keys] *******************************************
+ok: [server1.netology]
+
+TASK [Adding rsa-key in /root/.ssh/authorized_keys] ****************************
+ok: [server1.netology]
+
+TASK [Checking DNS] ************************************************************
+changed: [server1.netology]
+
+TASK [Installing tools] ********************************************************
+ok: [server1.netology] => (item=['git', 'curl'])
+
+TASK [Installing docker] *******************************************************
+changed: [server1.netology]
+
+TASK [Add the current user to docker group] ************************************
+ok: [server1.netology]
+
+PLAY RECAP *********************************************************************
+server1.netology           : ok=7    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+```
+
+```bash
+ubuntu@ubuntu-virtual-machine:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
 
