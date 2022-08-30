@@ -22,6 +22,11 @@ Hey, Netology
 
 Опубликуйте созданный форк в своем репозитории и предоставьте ответ в виде ссылки на https://hub.docker.com/username_repo.
 
+***Ответ:***
+
+![image](https://user-images.githubusercontent.com/106968319/187454980-cf4e5cb1-6be0-440e-9460-aa002c67a5a5.png)
+
+
 
 
 
