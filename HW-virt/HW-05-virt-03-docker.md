@@ -88,6 +88,17 @@ CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     
 for-centos
 ```
 
+`root@server1:/# touch data/for-host`
+
+
+`docker exec -it elated_nash bash`
+
+```
+root@444e4da5b4ac:/# ls -l data/
+-rw-r--r-- 1 root root 0 Sep  1 14:24 for-centos
+-rw-r--r-- 1 root root 0 Sep  1 14:27 for-host
+```
+
 
 ## Задача 4 (*)
 
