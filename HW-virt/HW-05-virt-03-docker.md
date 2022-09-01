@@ -24,9 +24,11 @@ Hey, Netology
 
 ***Ответ:***
 
-docker run -itd -p 8080:80 peretyaginsa/nginx:v0.0.5
+Для запуска - docker run -itd -p 8080:80 peretyaginsa/nginx:v0.0.5
 
 ![image](https://user-images.githubusercontent.com/106968319/187865804-b319bb3f-42d2-438b-a9b9-1120a60311bb.png)
+
+https://hub.docker.com/repository/docker/peretyaginsa/nginx tag = v0.0.5
 
 ## Задача 2
 Посмотрите на сценарий ниже и ответьте на вопрос: "Подходит ли в этом сценарии использование Docker контейнеров или лучше подойдет виртуальная машина, физическая машина? Может быть возможны разные варианты?"
