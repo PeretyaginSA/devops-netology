@@ -80,6 +80,15 @@ CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     
 7ad101502520   centos    "/bin/bash"   3 minutes ago   Up 3 minutes             unruffled_hermann
 ```
 
+`docker exec -it unruffled_hermann bash`
+
+```
+[root@7ad101502520 /]# touch data/for-centos
+[root@7ad101502520 /]# ls data/
+for-centos
+```
+
+
 ## Задача 4 (*)
 
 
