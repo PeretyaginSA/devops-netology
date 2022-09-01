@@ -24,11 +24,9 @@ Hey, Netology
 
 ***Ответ:***
 
-![image](https://user-images.githubusercontent.com/106968319/187454980-cf4e5cb1-6be0-440e-9460-aa002c67a5a5.png)
+docker run -itd -p 8080:80 peretyaginsa/nginx:v0.0.5
 
-
-
-
+![image](https://user-images.githubusercontent.com/106968319/187865804-b319bb3f-42d2-438b-a9b9-1120a60311bb.png)
 
 ## Задача 2
 Посмотрите на сценарий ниже и ответьте на вопрос: "Подходит ли в этом сценарии использование Docker контейнеров или лучше подойдет виртуальная машина, физическая машина? Может быть возможны разные варианты?"
