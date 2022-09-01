@@ -27,7 +27,7 @@ Hey, Netology
 
 https://hub.docker.com/repository/docker/peretyaginsa/nginx tag = v0.0.5
 
-Для запуска - docker run -itd -p 8080:80 peretyaginsa/nginx:v0.0.5
+Для запуска - docker run -d -p 8080:80 peretyaginsa/nginx:v0.0.5
 
 index.html скопировал по средствам Dockerfile COPY
 
