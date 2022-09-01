@@ -70,7 +70,9 @@ _ _
 ***Ответ:***
 
 `docker run -v /data:/data -itd centos`
+
 `docker run -v /data:/data -itd debian`
+
 ```bash
 root@server1:/# docker ps
 CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
