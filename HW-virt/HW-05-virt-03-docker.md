@@ -67,6 +67,16 @@ _ _
 + Подключитесь во второй контейнер и отобразите листинг и содержание файлов в `/data` контейнера.
 
 
+***Ответ:***
+
+docker run -v /data:/data -itd centos
+docker run -v /data:/data -itd debian
+```bash
+root@server1:/# docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+444e4da5b4ac   debian    "bash"        8 seconds ago   Up 7 seconds             elated_nash
+7ad101502520   centos    "/bin/bash"   3 minutes ago   Up 3 minutes             unruffled_hermann
+```
 
 ## Задача 4 (*)
 
