@@ -136,7 +136,11 @@ root@444e4da5b4ac:/# ls -l data/
 Соберите Docker образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
 
 
+***Ответ:***
 
+Выполнено
+
+https://hub.docker.com/repository/docker/peretyaginsa/ansible
 
 
 
