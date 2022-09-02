@@ -140,7 +140,7 @@ root@444e4da5b4ac:/# ls -l data/
 
 Выполнено
 
-https://hub.docker.com/repository/docker/peretyaginsa/ansible
+https://hub.docker.com/repository/docker/peretyaginsa/ansible tag = v0.0.1
 
 
 
