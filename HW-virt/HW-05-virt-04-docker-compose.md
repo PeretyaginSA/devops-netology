@@ -13,7 +13,6 @@
 ![image](https://user-images.githubusercontent.com/106968319/188450203-29e67fd9-cdc8-43bf-b193-9962c40dd6cb.png)
 
 
-
 ## Задача 2
 
 Создать вашу первую виртуальную машину в Яндекс.Облаке.
@@ -27,8 +26,6 @@
 ![image](https://user-images.githubusercontent.com/106968319/188449709-f73d5dc5-5158-4358-974b-1cbc881c9a82.png)
 
 
-
-
 ## Задача 3
 
 Создать ваш первый готовый к боевой эксплуатации компонент мониторинга, состоящий из стека микросервисов.
@@ -37,6 +34,12 @@
 
 + Скриншот работающего веб-интерфейса Grafana с текущими метриками, как на примере ниже
 
+***Ответ:***
+
+![image](https://user-images.githubusercontent.com/106968319/188464807-5cb9e2c6-cf00-47dd-a5d2-c6d31266f30f.png)
+
+
+![image](https://user-images.githubusercontent.com/106968319/188464636-ed098b94-1a06-4336-9a8e-cd6ae82be918.png)
 
 
 ## Задача 4 (*)
