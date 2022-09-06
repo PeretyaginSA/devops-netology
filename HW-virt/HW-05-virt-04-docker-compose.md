@@ -53,10 +53,12 @@
 
 ***Ответ:***
 
-external_ip_address_node01_yandex_cloud = "130.193.51.196"
-external_ip_address_node02_yandex_cloud = "130.193.48.83"
-internal_ip_address_node01_yandex_cloud = "192.168.101.7"
-internal_ip_address_node02_yandex_cloud = "192.168.101.12"
+Задание делал не сразу поэтому ip другие
+
++ external_ip_address_node01_yandex_cloud = "130.193.51.196"
++ external_ip_address_node02_yandex_cloud = "130.193.48.83"
++ internal_ip_address_node01_yandex_cloud = "192.168.101.7"
++ internal_ip_address_node02_yandex_cloud = "192.168.101.12"
 
 
 ![image](https://user-images.githubusercontent.com/106968319/188674755-344c834d-49ab-4e8f-95cf-63b974177128.png)
