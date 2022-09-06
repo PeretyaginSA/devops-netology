@@ -59,5 +59,14 @@ internal_ip_address_node01_yandex_cloud = "192.168.101.7"
 internal_ip_address_node02_yandex_cloud = "192.168.101.12"
 
 
-![image](https://user-images.githubusercontent.com/106968319/188674214-60d30ff3-99e5-4693-b60a-2c58e7d1e580.png)
+![image](https://user-images.githubusercontent.com/106968319/188674755-344c834d-49ab-4e8f-95cf-63b974177128.png)
+
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/106968319/188674847-4117916b-1d7f-4ee0-a227-3f74fb9fdb4d.png)
+
 
