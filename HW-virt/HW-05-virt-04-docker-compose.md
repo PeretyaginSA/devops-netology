@@ -51,3 +51,13 @@
 
 + Скриншот из Grafana, на котором будут отображаться метрики добавленного вами сервера.
 
+***Ответ:***
+
+external_ip_address_node01_yandex_cloud = "130.193.51.196"
+external_ip_address_node02_yandex_cloud = "130.193.48.83"
+internal_ip_address_node01_yandex_cloud = "192.168.101.7"
+internal_ip_address_node02_yandex_cloud = "192.168.101.12"
+
+
+![image](https://user-images.githubusercontent.com/106968319/188674214-60d30ff3-99e5-4693-b60a-2c58e7d1e580.png)
+
