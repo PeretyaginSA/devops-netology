@@ -71,7 +71,7 @@ index.html скопировал по средствам Dockerfile COPY
     \- *Docker значительно упрощает развертывание*
 
 + Elasticsearch кластер для реализации логирования продуктивного веб-приложения - три ноды elasticsearch, два logstash и две ноды kibana;<br>
-
+    \- *Docker для создания ELK Stack*
 
 + Мониторинг-стек на базе Prometheus и Grafana;
 
