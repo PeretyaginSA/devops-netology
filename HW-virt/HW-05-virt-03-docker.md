@@ -61,7 +61,7 @@ index.html скопировал по средствам Dockerfile COPY
 + Высоконагруженное монолитное java веб-приложение;<br>
 физический сервер,  
     sdgsdgsdg
-ffasf
+ffasf<br>
     asfa
     
 + Nodejs веб-приложение;
