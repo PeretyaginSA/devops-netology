@@ -81,3 +81,11 @@ Please remember to store this key in a password manager, since without it you
 will not be able to restart the manager.
 ```
 
+
+```bash
+[root@node02 centos]# docker node ls
+Error response from daemon: Swarm is encrypted and needs to be unlocked before it can be used. Please use "docker swarm unlock" to unlock it.
+```
+
+
+docker swarm update --autolock=true - позволяет включить автоблокировку существующего docker swarm,
