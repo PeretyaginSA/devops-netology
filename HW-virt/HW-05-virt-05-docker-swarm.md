@@ -16,6 +16,22 @@
 
 `docker node ls`
 
+***Ответ:*
+
+```bash
+[root@node01 centos]# docker node ls
+ID                            HOSTNAME             STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+pydocwpq544q3ckjy16roays6 *   node01.netology.yc   Ready     Active         Leader           20.10.18
+ruglmziil4zpt6th6zjxwtwki     node02.netology.yc   Ready     Active         Reachable        20.10.18
+l543llcvfzsoc8bow148d3fgn     node03.netology.yc   Ready     Active         Reachable        20.10.18
+u6n9axzd9vrtlh6rc4r6uu9hw     node04.netology.yc   Ready     Active                          20.10.18
+m0qqj68pquxy7m0xtv6qvq0im     node05.netology.yc   Ready     Active                          20.10.18
+vm1haixmrw887qm4l5n0jebar     node06.netology.yc   Ready     Active                          20.10.18
+```
+
+
+
+
 ## Задача 3
 
 Создать ваш первый, готовый к боевой эксплуатации кластер мониторинга, состоящий из стека микросервисов.
