@@ -16,7 +16,7 @@
 
 `docker node ls`
 
-***Ответ:*
+***Ответ:***
 
 ```bash
 [root@node01 centos]# docker node ls
@@ -40,7 +40,20 @@ vm1haixmrw887qm4l5n0jebar     node06.netology.yc   Ready     Active             
 
 `docker service ls`
 
+***Ответ:***
 
+```bash
+[root@node01 centos]# docker service ls
+ID             NAME                                MODE         REPLICAS   IMAGE                                          PORTS
+qzxbwh4ca1k6   swarm_monitoring_alertmanager       replicated   1/1        stefanprodan/swarmprom-alertmanager:v0.14.0    
+cqtr51od1t0m   swarm_monitoring_caddy              replicated   1/1        stefanprodan/caddy:latest                      *:3000->3000/tcp, *:9090->9090/tcp, *:9093-9094->9093-9094/tcp
+7zoe6mcivzpz   swarm_monitoring_cadvisor           global       6/6        google/cadvisor:latest                         
+m1dkkgb4z3mv   swarm_monitoring_dockerd-exporter   global       6/6        stefanprodan/caddy:latest                      
+n3upcv5688nn   swarm_monitoring_grafana            replicated   1/1        stefanprodan/swarmprom-grafana:5.3.4           
+v9wqe7bskbaf   swarm_monitoring_node-exporter      global       6/6        stefanprodan/swarmprom-node-exporter:v0.16.0   
+z291rkbbgjn5   swarm_monitoring_prometheus         replicated   1/1        stefanprodan/swarmprom-prometheus:v2.5.0       
+kmcsnh7tr5aq   swarm_monitoring_unsee              replicated   1/1        cloudflare/unsee:v0.8.0  
+```
 
 ## Задача 4 (*)
 
