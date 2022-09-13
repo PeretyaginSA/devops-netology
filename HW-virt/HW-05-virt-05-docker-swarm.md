@@ -8,6 +8,21 @@
 + Что такое Overlay Network?
 
 
+***Ответ:***
+
++ В чём отличие режимов работы сервисов в Docker Swarm кластере: replication и global?
+    \- *replication позволяет указать количество экземпляров сервиса, а Docker Swarm сам решает на какие узлы развернуть*
+    \- *global позволяет развернуть сервис в однот экземпляре на каждом узле кластера
+    
++ Какой алгоритм выбора лидера используется в Docker Swarm кластере?
+
+
++ Что такое Overlay Network?
+
+
+
+
+
 ## Задача 2
 
 Создать ваш первый Docker Swarm кластер в Яндекс.Облаке
@@ -63,9 +78,6 @@ kmcsnh7tr5aq   swarm_monitoring_unsee              replicated   1/1        cloud
 # см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/
 docker swarm update --autolock=true
 ```
-
-
-
 
 ***Ответ:***
 
