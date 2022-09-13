@@ -67,3 +67,17 @@ docker swarm update --autolock=true
 
 
 
+***Ответ:***
+
+```bash
+[root@node01 centos]# docker swarm update --autolock=true
+Swarm updated.
+To unlock a swarm manager after it restarts, run the `docker swarm unlock`
+command and provide the following key:
+
+    SWMKEY-1-c8mjxReoQOM7KShDDQOSUwaRnmhYX2d0PABiOs4rJ9o
+
+Please remember to store this key in a password manager, since without it you
+will not be able to restart the manager.
+```
+
