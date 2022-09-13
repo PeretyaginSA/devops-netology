@@ -88,4 +88,6 @@ Error response from daemon: Swarm is encrypted and needs to be unlocked before i
 ```
 
 
-docker swarm update --autolock=true - позволяет включить автоблокировку существующего docker swarm,
+docker swarm update --autolock=true - позволяет включить автоблокировку существующего docker swarm, это позволяет защитить кластер от несанкционированного доступа.<br>
+До ввода ключа функционал ноды ограничен.
+
