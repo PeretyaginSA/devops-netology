@@ -30,8 +30,8 @@
 
 Выполнить на лидере Docker Swarm кластера команду (указанную ниже) и дать письменное описание её функционала, что она делает и зачем она нужна:
 
-`# см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/<br>
-docker swarm update --autolock=true`
+`# см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/`
+`docker swarm update --autolock=true`
 
 
 
