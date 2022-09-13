@@ -32,7 +32,6 @@
 
 `# см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/
 
-
 docker swarm update --autolock=true`
 
 
