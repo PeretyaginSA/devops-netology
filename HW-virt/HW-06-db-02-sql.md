@@ -7,9 +7,7 @@
 Приведите получившуюся команду или docker-compose манифест.
 
 ```bash
-root@ubuntu-virtual-machine:/home/ubuntu# docker ps 
-CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS         PORTS                                       NAMES
-b11b9cee2179   postgres:12   "docker-entrypoint.s…"   3 seconds ago   Up 2 seconds   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   zealous_engelbar
+docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:12
 ```
 
 ## Задача 2
@@ -50,11 +48,11 @@ b11b9cee2179   postgres:12   "docker-entrypoint.s…"   3 seconds ago   Up 2 sec
 Таблица orders:
 
 
-| Наименование | цена |
+Наименование | цена
 |---|---|      
-Шоколад	| 10 |
+Шоколад	| 10 
 Принтер	| 3000
-Книга	| 500
+Книга 	| 500
 Монитор	| 7000
 Гитара	| 4000
 
@@ -62,11 +60,11 @@ b11b9cee2179   postgres:12   "docker-entrypoint.s…"   3 seconds ago   Up 2 sec
 
 ФИО |	Страна проживания
 |---|---| 
-Иванов Иван Иванович|	USA
-Петров Петр Петрович|	Canada
-Иоганн Себастьян Бах|	Japan
-Ронни Джеймс Дио	|Russia
-Ritchie Blackmore	|Russia
+Иванов Иван Иванович | USA
+Петров Петр Петрович | Canada
+Иоганн Себастьян Бах | Japan
+Ронни Джеймс Дио	   | Russia
+Ritchie Blackmore 	 | Russia
 
 Используя SQL синтаксис:
 
@@ -84,9 +82,9 @@ Ritchie Blackmore	|Russia
 
 ФИО	| Заказ
 |---|---|
-Иванов Иван Иванович|	Книга
-Петров Петр Петрович|	Монитор
-Иоганн Себастьян Бах|	Гитара
+Иванов Иван Иванович |	Книга
+Петров Петр Петрович |	Монитор
+Иоганн Себастьян Бах |	Гитара
 
 
 Приведите SQL-запросы для выполнения данных операций.
