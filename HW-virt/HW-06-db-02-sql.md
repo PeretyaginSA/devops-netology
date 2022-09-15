@@ -7,9 +7,9 @@
 Приведите получившуюся команду или docker-compose манифест.
 
 ```bash
-root@ubuntu-virtual-machine:/home/ubuntu# docker ps
-CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS         PORTS      NAMES
-8a3622ef7fd0   postgres:12   "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes   5432/tcp   gracious_fermat
+root@ubuntu-virtual-machine:/home/ubuntu# docker ps 
+CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+b11b9cee2179   postgres:12   "docker-entrypoint.s…"   3 seconds ago   Up 2 seconds   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   zealous_engelbar
 ```
 
 ## Задача 2
