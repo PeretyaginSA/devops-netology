@@ -7,7 +7,8 @@
 Приведите получившуюся команду или docker-compose манифест.
 
 ```bash
-docker run -e POSTGRES_PASSWORD=postgres \
+docker run \
+-e POSTGRES_PASSWORD=postgres \
 -p 5432:5432 \
 -v /home/ubuntu/hw_sql/pg_db/:/var/lib/postgresql/data \
 -v /home/ubuntu/hw_sql/pg_backup/:/var/lib/postgresql/ \
