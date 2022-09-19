@@ -268,18 +268,21 @@ WHERE o.id = c.заказ;
 
 
 ```sql
-test_db=# EXPLAIN
+test_db=# EXPLAIN (analyze)
 SELECT c.фамилия, o.наименование "заказ"
 FROM  clients c, orders o
 WHERE o.id = c.заказ;
-                               QUERY PLAN                                
--------------------------------------------------------------------------
- Hash Join  (cost=37.00..57.24 rows=810 width=64)
+                                                    QUERY PLAN                                                     
+-------------------------------------------------------------------------------------------------------------------
+ Hash Join  (cost=37.00..57.24 rows=810 width=64) (actual time=0.037..0.039 rows=3 loops=1)
    Hash Cond: (c."заказ" = o.id)
-   ->  Seq Scan on clients c  (cost=0.00..18.10 rows=810 width=36)
-   ->  Hash  (cost=22.00..22.00 rows=1200 width=36)
-         ->  Seq Scan on orders o  (cost=0.00..22.00 rows=1200 width=36)
-(5 rows)
+   ->  Seq Scan on clients c  (cost=0.00..18.10 rows=810 width=36) (actual time=0.007..0.008 rows=5 loops=1)
+   ->  Hash  (cost=22.00..22.00 rows=1200 width=36) (actual time=0.008..0.008 rows=5 loops=1)
+         Buckets: 2048  Batches: 1  Memory Usage: 17kB
+         ->  Seq Scan on orders o  (cost=0.00..22.00 rows=1200 width=36) (actual time=0.005..0.005 rows=5 loops=1)
+ Planning Time: 0.143 ms
+ Execution Time: 0.079 ms
+(8 rows)
 ```
 
 
