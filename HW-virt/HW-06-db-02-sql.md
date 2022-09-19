@@ -335,5 +335,6 @@ root@ubuntu-virtual-machine:/home/ubuntu#
 docker run \
 -e POSTGRES_PASSWORD=postgres \
 -p 5432:5432 \
+-v /home/ubuntu/hw_sql/pg_backup/:/var/lib/postgresql/ \
 -d postgres:12
 ```
