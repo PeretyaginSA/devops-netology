@@ -71,7 +71,7 @@ Indexes:
 Referenced by:
     TABLE "clients" CONSTRAINT "clients_заказ_fkey" FOREIGN KEY ("заказ") REFERENCES orders(id)
 ```
-```bash
+```Rc
 test_db=# \d clients
                                        Table "public.clients"
       Column       |       Type        | Collation | Nullable |               Default               
@@ -95,7 +95,7 @@ ORDER BY grantee;
 
 + список пользователей с правами над таблицами test_db
 
-```Zsh
+```Scsh
 test_db=# SELECT * FROM information_schema.table_privileges
 WHERE grantee in ('test-admin-user', 'test-simple-user')
 ORDER BY grantee;
