@@ -267,7 +267,7 @@ WHERE o.id = c.заказ;
 ***Ответ:***
 
 
-```psql
+```mysql
 test_db=# EXPLAIN
 SELECT c.фамилия, o.наименование "заказ"
 FROM  clients c, orders o
