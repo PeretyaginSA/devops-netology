@@ -338,3 +338,53 @@ docker run \
 -v /home/ubuntu/hw_sql/pg_backup/:/var/lib/postgresql/ \
 -d postgres:12
 ```
+
+- Восстановите БД test_db
+
+```bash
+root@d4409461b66f:/var/lib/postgresql# psql -U postgres test_db < ./test_db.backup
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+ALTER TABLE
+ALTER TABLE
+COPY 5
+COPY 5
+ setval 
+--------
+      5
+(1 row)
+
+ setval 
+--------
+      5
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+root@d4409461b66f:/var/lib/postgresql# 
+```
