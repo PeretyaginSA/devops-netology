@@ -87,8 +87,8 @@ Foreign-key constraints:
 ```
 
 + SQL-запрос для выдачи списка пользователей с правами над таблицами test_db<br>
-`SELECT * FROM information_schema.table_privileges
-WHERE grantee in ('test-admin-user','test-simple-user')
+`SELECT * FROM information_schema.table_privileges<br>
+WHERE grantee in ('test-admin-user','test-simple-user')<br>
 ORDER BY grantee;`
 
 
