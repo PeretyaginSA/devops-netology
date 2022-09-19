@@ -264,6 +264,24 @@ WHERE o.id = c.заказ;
 Приведите получившийся результат и объясните что значат полученные значения.
 
 
+***Ответ:***
+
+
+```sql
+test_db=# EXPLAIN
+SELECT c.фамилия, o.наименование "заказ"
+FROM  clients c, orders o
+WHERE o.id = c.заказ;
+                               QUERY PLAN                                
+-------------------------------------------------------------------------
+ Hash Join  (cost=37.00..57.24 rows=810 width=64)
+   Hash Cond: (c."заказ" = o.id)
+   ->  Seq Scan on clients c  (cost=0.00..18.10 rows=810 width=36)
+   ->  Hash  (cost=22.00..22.00 rows=1200 width=36)
+         ->  Seq Scan on orders o  (cost=0.00..22.00 rows=1200 width=36)
+(5 rows)
+```
+
 
 ## Задача 6
 
