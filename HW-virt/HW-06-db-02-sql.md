@@ -86,10 +86,12 @@ Foreign-key constraints:
     "clients_заказ_fkey" FOREIGN KEY ("заказ") REFERENCES orders(id)
 ```
 
-+ SQL-запрос для выдачи списка пользователей с правами над таблицами test_db<br>
-`SELECT * FROM information_schema.table_privileges<br>
-WHERE grantee in ('test-admin-user','test-simple-user')<br>
-ORDER BY grantee;`
++ SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
+```
+SELECT * FROM information_schema.table_privileges
+WHERE grantee in ('test-admin-user','test-simple-user')
+ORDER BY grantee;
+```
 
 
 + список пользователей с правами над таблицами test_db
