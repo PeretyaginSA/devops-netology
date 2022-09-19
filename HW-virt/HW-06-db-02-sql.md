@@ -227,6 +227,21 @@ test_db=# SELECT COUNT(*) FROM clients;
 
 
 
+***Ответ:***
+```sql
+update clients
+set заказ = 3
+where id  = 1
+```
+update clients
+set заказ = 4
+where id  = 2
+
+update clients
+set заказ = 5
+where id  = 3
+
+
 ## Задача 5
 
 Получите полную информацию по выполнению запроса выдачи всех пользователей из задачи 4 (используя директиву EXPLAIN).
