@@ -233,14 +233,16 @@ update clients
 set заказ = 3
 where id  = 1
 ```
+```sql
 update clients
 set заказ = 4
 where id  = 2
-
+```
+```sql
 update clients
 set заказ = 5
 where id  = 3
-
+```
 
 ## Задача 5
 
