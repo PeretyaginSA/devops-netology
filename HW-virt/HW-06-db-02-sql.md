@@ -41,7 +41,7 @@ docker run \
 **Приведите:**
 
 + итоговый список БД после выполнения пунктов выше,
-```sh
+```bash
 test_db=# \l
                                      List of databases
    Name    |  Owner   | Encoding |  Collate   |   Ctype    |       Access privileges        
@@ -58,6 +58,34 @@ test_db=# \l
 ```
 
 + описание таблиц (describe)
+```bash
+test_db=# \d orders
+                                    Table "public.orders"
+    Column    |       Type        | Collation | Nullable |              Default               
+--------------+-------------------+-----------+----------+------------------------------------
+ id           | integer           |           | not null | nextval('orders_id_seq'::regclass)
+ наименование | character varying |           |          | 
+ цена         | integer           |           |          | 
+Indexes:
+    "orders_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+    TABLE "clients" CONSTRAINT "clients_заказ_fkey" FOREIGN KEY ("заказ") REFERENCES orders(id)
+```
+```bash
+test_db=# \d clients
+                                       Table "public.clients"
+      Column       |       Type        | Collation | Nullable |               Default               
+-------------------+-------------------+-----------+----------+-------------------------------------
+ id                | integer           |           | not null | nextval('clients_id_seq'::regclass)
+ фамилия           | character varying |           |          | 
+ страна проживания | character varying |           |          | 
+ заказ             | integer           |           |          | 
+Indexes:
+    "clients_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "clients_заказ_fkey" FOREIGN KEY ("заказ") REFERENCES orders(id)
+```
+
 + SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 + список пользователей с правами над таблицами test_db
 
