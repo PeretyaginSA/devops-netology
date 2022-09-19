@@ -309,7 +309,7 @@ Total runtime — общее время выполнения запроса.
 
 
 ***Ответ:***
-
+- Создание бэкапа
 `root@c3b1be1f0d6c:/# pg_dump -U postgres test_db > /var/lib/postgresql/test_db.backup`
 
 ```bash
@@ -317,3 +317,23 @@ root@ubuntu-virtual-machine:/# la /home/ubuntu/hw_sql/pg_backup/
 test_db.backup
 ```
 
+- Остановка контейнера
+```bash
+root@ubuntu-virtual-machine:/home/ubuntu# docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED       STATUS       PORTS                                       NAMES
+c3b1be1f0d6c   postgres:12   "docker-entrypoint.s…"   6 hours ago   Up 6 hours   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   ecstatic_mestorf
+root@ubuntu-virtual-machine:/home/ubuntu# docker stop ecstatic_mestorf
+ecstatic_mestorf
+root@ubuntu-virtual-machine:/home/ubuntu# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ubuntu-virtual-machine:/home/ubuntu#
+```
+
+- Новый пустой контейнер с PostgreSQL
+
+```bash
+docker run \
+-e POSTGRES_PASSWORD=postgres \
+-p 5432:5432 \
+-d postgres:12
+```
