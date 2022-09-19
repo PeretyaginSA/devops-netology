@@ -181,13 +181,10 @@ test_db=# SELECT COUNT(*) FROM orders;
 
 
 
-```bash
-test_db=# SELECT COUNT(*) FROM clients;
- count 
--------
-     5
-(1 row)
-```
+
+
+
+
 ```bash
 test_db=# SELECT * FROM clients;
  id |       фамилия        | страна проживания | заказ 
@@ -199,6 +196,14 @@ test_db=# SELECT * FROM clients;
   5 | Ritchie Blackmore    | Russia            |      
 (5 rows)
 ```
+```bash
+test_db=# SELECT COUNT(*) FROM clients;
+ count 
+-------
+     5
+(1 row)
+```
+
 
 ## Задача 4
 
