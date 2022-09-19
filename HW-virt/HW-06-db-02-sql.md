@@ -41,7 +41,7 @@ docker run \
 **Приведите:**
 
 + итоговый список БД после выполнения пунктов выше,
-```bash
+```sh
 test_db=# \l
                                      List of databases
    Name    |  Owner   | Encoding |  Collate   |   Ctype    |       Access privileges        
