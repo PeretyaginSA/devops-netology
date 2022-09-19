@@ -311,8 +311,9 @@ Total runtime — общее время выполнения запроса.
 ***Ответ:***
 
 `pg_dump -U postgres test_db > /var/lib/postgresql/test_db.backup`
+
 ```bash
-root@ubuntu-virtual-machine:/# ls -l /home/ubuntu/hw_sql/pg_backup/
--rw-r--r-- 1 root root 4339 сен 19 17:58 test_db.backup
+root@ubuntu-virtual-machine:/# la /home/ubuntu/hw_sql/pg_backup/
+test_db.backup
 ```
 
