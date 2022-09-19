@@ -185,7 +185,7 @@ test_db=# SELECT COUNT(*) FROM orders;
 
 
 
-```bash
+```sql
 test_db=# SELECT * FROM clients;
  id |       фамилия        | страна проживания | заказ 
 ----+----------------------+-------------------+-------
