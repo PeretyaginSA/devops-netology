@@ -102,6 +102,7 @@ mysql> select *
 
 ***Ответ:***
 
+```bash
 CREATE USER 'test'@'localhost'
 	IDENTIFIED WITH mysql_native_password BY 'test-pass'
 	WITH MAX_CONNECTIONS_PER_HOUR 100
@@ -111,6 +112,8 @@ CREATE USER 'test'@'localhost'
 GRANT SELECT 
 	ON test_db.* 
 	TO 'test'@'localhost';
+ ```
+ 
  
 ```sql
 mysql> SELECT *
