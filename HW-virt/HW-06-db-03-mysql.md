@@ -68,7 +68,7 @@ mysql> show tables;
 1 row in set (0.00 sec)
 ```
 
-```java
+```sql
 mysql> select *
     -> from orders
     -> where price > 300;
