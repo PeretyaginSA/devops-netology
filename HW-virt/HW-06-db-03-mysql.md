@@ -19,7 +19,7 @@
 
 ***Ответ:***
 
-```bash
+```sh
 docker run \
 --name test_mysql \
 -e MYSQL_ROOT_PASSWORD=mysql \
@@ -31,7 +31,8 @@ docker run \
 `docker exec -it test_mysql bash`<br>
 `mysql -uroot -p`<br>
 `create database test_db`
-```mysql
+
+```sql
 mysql> \s
 --------------
 mysql  Ver 8.0.30 for Linux on x86_64 (MySQL Community Server - GPL)
@@ -58,7 +59,7 @@ Threads: 2  Questions: 102  Slow queries: 0  Opens: 164  Flush tables: 3  Open t
 --------------
 ```
 
-```mysql
+```sql
 mysql> show tables;
 +-------------------+
 | Tables_in_test_db |
