@@ -19,7 +19,7 @@
 
 ***Ответ:***
 
-```sh
+```bash
 docker run \
 --name test_mysql \
 -e MYSQL_ROOT_PASSWORD=mysql \
@@ -31,7 +31,8 @@ docker run \
 `docker exec -it test_mysql bash`<br>
 `mysql -u root -p`<br>
 `create database test_db`<br>
-```sh mysql -u root -p test_db < /backup/test_dump.sql```
+```sh
+mysql -u root -p test_db < /backup/test_dump.sql```
 
 ```sql
 mysql> \s
