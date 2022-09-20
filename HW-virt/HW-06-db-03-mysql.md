@@ -19,13 +19,43 @@
 
 ***Ответ:***
 
-1. ```bash
+```bash
 docker run \
 --name test_mysql \
 -e MYSQL_ROOT_PASSWORD=mysql \
 -p 3306:3306 \
 -v /home/ubuntu/hw_sql/mysql_backup/:/backup/ \
 -d mysql:8
+```
+
+`docker exec -it test_mysql bash`
+`mysql -uroot -p`
+`create database test_db`
+```mysql
+mysql> \s
+--------------
+mysql  Ver 8.0.30 for Linux on x86_64 (MySQL Community Server - GPL)
+
+Connection id:		19
+Current database:	test_db
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		8.0.30 MySQL Community Server - GPL
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	latin1
+Conn.  characterset:	latin1
+UNIX socket:		/var/run/mysqld/mysqld.sock
+Binary data as:		Hexadecimal
+Uptime:			1 hour 28 min 43 sec
+
+Threads: 2  Questions: 102  Slow queries: 0  Opens: 164  Flush tables: 3  Open tables: 82  Queries per second avg: 0.019
+--------------
 ```
 
 
