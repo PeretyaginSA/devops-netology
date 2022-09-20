@@ -32,7 +32,8 @@ docker run \
 `mysql -u root -p`<br>
 `create database test_db`<br>
 ```sh
-mysql -u root -p test_db < /backup/test_dump.sql```
+mysql -u root -p test_db < /backup/test_dump.sql
+```
 
 ```sql
 mysql> \s
