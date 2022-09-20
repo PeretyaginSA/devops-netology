@@ -58,6 +58,15 @@ Threads: 2  Questions: 102  Slow queries: 0  Opens: 164  Flush tables: 3  Open t
 --------------
 ```
 
+```mysql
+mysql> show tables;
++-------------------+
+| Tables_in_test_db |
++-------------------+
+| orders            |
++-------------------+
+1 row in set (0.00 sec)
+```
 
 ## Задача 2
 
