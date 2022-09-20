@@ -17,7 +17,16 @@
 
 В следующих заданиях мы будем продолжать работу с данным контейнером.
 
+***Ответ:***
 
+1. ```bash
+docker run \
+--name test_mysql \
+-e MYSQL_ROOT_PASSWORD=mysql \
+-p 3306:3306 \
+-v /home/ubuntu/hw_sql/mysql_backup/:/backup/ \
+-d mysql:8
+```
 
 
 ## Задача 2
