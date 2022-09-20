@@ -109,9 +109,11 @@ CREATE USER 'test'@'localhost'
 	PASSWORD EXPIRE INTERVAL 180 DAY
 	FAILED_LOGIN_ATTEMPTS 3 PASSWORD_LOCK_TIME UNBOUNDED
 	ATTRIBUTE '{"fname":"James", "lname":"Pretty"}';
+Query OK, 0 rows affected (0.00 sec)
 GRANT SELECT 
 	ON test_db.* 
 	TO 'test'@'localhost';
+Query OK, 0 rows affected, 1 warning (0.00 sec)
  ```
  
  
