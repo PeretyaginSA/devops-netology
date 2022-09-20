@@ -105,7 +105,8 @@ mysql> select *
 ```bash
 CREATE USER 'test'@'localhost'
 	IDENTIFIED WITH mysql_native_password BY 'test-pass'
-	WITH MAX_CONNECTIONS_PER_HOUR 100
+	WITH 
+	MAX_CONNECTIONS_PER_HOUR 100
 	PASSWORD EXPIRE INTERVAL 180 DAY
 	FAILED_LOGIN_ATTEMPTS 3 PASSWORD_LOCK_TIME UNBOUNDED
 	ATTRIBUTE '{"fname":"James", "lname":"Pretty"}';
