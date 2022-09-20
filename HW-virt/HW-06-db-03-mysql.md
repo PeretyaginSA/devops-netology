@@ -29,7 +29,7 @@ docker run \
 ```
 
 `docker exec -it test_mysql bash`<br>
-`mysql -uroot -p`<br>
+`mysql -u root -p`<br>
 `create database test_db`<br>
 `mysql -u root -p test_db < /backup/test_dump.sql`
 
