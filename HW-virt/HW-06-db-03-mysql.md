@@ -28,8 +28,8 @@ docker run \
 -d mysql:8
 ```
 
-`docker exec -it test_mysql bash`
-`mysql -uroot -p`
+`docker exec -it test_mysql bash`<br>
+`mysql -uroot -p`<br>
 `create database test_db`
 ```mysql
 mysql> \s
