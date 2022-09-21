@@ -215,55 +215,27 @@ mysql> SHOW TABLE STATUS WHERE Name = 'orders'\g;
 ```
 3.
 ```sql
-mysql> ALTER TABLE orders ENGINE = MyISAM;
-Query OK, 5 rows affected (0.05 sec)
+mysql>  ALTER TABLE orders ENGINE = MyISAM;
+Query OK, 5 rows affected (0.02 sec)
 Records: 5  Duplicates: 0  Warnings: 0
------------------------
+
+mysql>  ALTER TABLE orders ENGINE = InnoDB;
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+
+
+
 mysql> SHOW PROFILES;
-+----------+------------+------------------------------------+
-| Query_ID | Duration   | Query                              |
-+----------+------------+------------------------------------+
-|        1 | 0.05009875 | ALTER TABLE orders ENGINE = MyISAM |
-+----------+------------+------------------------------------+
-1 row in set, 1 warning (0.00 sec)
------------------------
-mysql> SHOW PROFILE FOR QUERY 1;
-+--------------------------------+----------+
-| Status                         | Duration |
-+--------------------------------+----------+
-| starting                       | 0.000093 |
-| Executing hook on transaction  | 0.000003 |
-| starting                       | 0.000015 |
-| checking permissions           | 0.000003 |
-| checking permissions           | 0.000002 |
-| init                           | 0.000007 |
-| Opening tables                 | 0.001740 |
-| setup                          | 0.000934 |
-| creating table                 | 0.005045 |
-| waiting for handler commit     | 0.000020 |
-| waiting for handler commit     | 0.001758 |
-| After create                   | 0.000252 |
-| System lock                    | 0.000006 |
-| copy to tmp table              | 0.002984 |
-| waiting for handler commit     | 0.000286 |
-| waiting for handler commit     | 0.000013 |
-| waiting for handler commit     | 0.000034 |
-| rename result table            | 0.000561 |
-| waiting for handler commit     | 0.019301 |
-| waiting for handler commit     | 0.000018 |
-| waiting for handler commit     | 0.003925 |
-| waiting for handler commit     | 0.000010 |
-| waiting for handler commit     | 0.006950 |
-| waiting for handler commit     | 0.000010 |
-| waiting for handler commit     | 0.001268 |
-| end                            | 0.002635 |
-| query end                      | 0.002076 |
-| closing tables                 | 0.000025 |
-| waiting for handler commit     | 0.000013 |
-| freeing items                  | 0.000046 |
-| cleaning up                    | 0.000069 |
-+--------------------------------+----------+
-31 rows in set, 1 warning (0.00 sec)
++----------+------------+-------------------------------------------+
+| Query_ID | Duration   | Query                                     |
++----------+------------+-------------------------------------------+
+|        1 | 0.00010125 | mysql> ALTER TABLE orders ENGINE = MyISAM |
+|        2 | 0.01369550 | ALTER TABLE orders ENGINE = MyISAM        |
+|        3 | 0.03175500 | ALTER TABLE orders ENGINE = InnoDB        |
++----------+------------+-------------------------------------------+
+3 rows in set, 1 warning (0.00 sec)
 ```
 
 
