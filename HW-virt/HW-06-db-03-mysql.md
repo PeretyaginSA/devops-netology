@@ -200,6 +200,15 @@ mysql> SHOW PROFILE FOR QUERY 1;
 3 rows in set, 1 warning (0.00 sec)
 ```
 
+```sql
+mysql> SHOW TABLE STATUS WHERE Name = 'orders'\g;
++--------+--------+---------+------------+------+----------------+
+| Name   | Engine | Version | Row_format | Rows | Avg_row_length |
++--------+--------+---------+------------+------+----------------+
+| orders | InnoDB |      10 | Dynamic    |    5 |           3276 |
++--------|--------|---------+------------+------+----------------+
+1 row in set (0.00 sec)
+```
 
 
 ## Задача 4
