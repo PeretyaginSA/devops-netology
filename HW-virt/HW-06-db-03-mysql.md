@@ -213,36 +213,28 @@ mysql> SHOW TABLE STATUS WHERE Name = 'orders'\g;
 +--------+--------+---------+------------+------+----------------+
 1 row in set (0.00 sec)
 ```
+
 3.
 ```sql
 mysql>  ALTER TABLE orders ENGINE = MyISAM;
-Query OK, 5 rows affected (0.02 sec)
-Records: 5  Duplicates: 0  Warnings: 0
-
-mysql>  ALTER TABLE orders ENGINE = InnoDB;
 Query OK, 5 rows affected (0.03 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
-
+mysql>  ALTER TABLE orders ENGINE = InnoDB;
+Query OK, 5 rows affected (0.04 sec)
+Records: 5  Duplicates: 0  Warnings: 0
 
 
 
 mysql> SHOW PROFILES;
-+----------+------------+-------------------------------------------+
-| Query_ID | Duration   | Query                                     |
-+----------+------------+-------------------------------------------+
-|        1 | 0.00010125 | mysql> ALTER TABLE orders ENGINE = MyISAM |
-|        2 | 0.01369550 | ALTER TABLE orders ENGINE = MyISAM        |
-|        3 | 0.03175500 | ALTER TABLE orders ENGINE = InnoDB        |
-+----------+------------+-------------------------------------------+
-3 rows in set, 1 warning (0.00 sec)
++----------+------------+------------------------------------+
+| Query_ID | Duration   | Query                              |
++----------+------------+------------------------------------+
+|        1 | 0.03480600 | ALTER TABLE orders ENGINE = MyISAM |
+|        2 | 0.03527150 | ALTER TABLE orders ENGINE = InnoDB |
++----------+------------+------------------------------------+
+2 rows in set, 1 warning (0.00 sec)
 ```
-
-
-
-
-
-
 
 ## Задача 4
 
