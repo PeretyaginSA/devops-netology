@@ -17,9 +17,6 @@
 
 
 
-safdasfasfasfasf \n
-asdasdasdasgasg
-
 
 ***Ответ:***
 
