@@ -18,6 +18,23 @@
 
 
 
+***Ответ:***
+
+```bash
+docker run \
+--name test_pg \
+-e POSTGRES_PASSWORD=postgres \
+-e POSTGRES_DB=test_database \
+-p 5432:5432 \
+-v /home/ubuntu/hw_sql/pg_db/:/var/lib/postgresql/data \
+-v /home/ubuntu/hw_sql/pg_backup/:/backup/ \
+-d postgres:13
+```
+
+
+
+
+
 ## Задача 2
 Используя `psql` создайте БД `test_database`.
 
