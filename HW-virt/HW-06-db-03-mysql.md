@@ -147,6 +147,59 @@ mysql> SELECT *
 + на `InnoDB`
 
 
+***Ответ:***
+
+```sql
+mysql> SHOW PROFILES;
++----------+------------+----------------------+
+| Query_ID | Duration   | Query                |
++----------+------------+----------------------+
+|        1 | 0.00037700 | SELECT * FROM orders |
+|        2 | 0.00154225 | SELECT DATABASE()    |
+|        3 | 0.00190125 | show databases       |
+|        4 | 0.00127700 | show tables          |
+|        5 | 0.00147625 | SET profiling = 1    |
+|        6 | 0.00018025 | SELECT * FROM orders |
++----------+------------+----------------------+
+6 rows in set, 1 warning (0.00 sec)
+```
+```sql
+mysql> SHOW PROFILE;
++--------------------------------+----------+
+| Status                         | Duration |
++--------------------------------+----------+
+| starting                       | 0.000060 |
+| Executing hook on transaction  | 0.000002 |
+| starting                       | 0.000006 |
+| checking permissions           | 0.000004 |
+| Opening tables                 | 0.000022 |
+| init                           | 0.000003 |
+| System lock                    | 0.000005 |
+| optimizing                     | 0.000003 |
+| statistics                     | 0.000010 |
+| preparing                      | 0.000011 |
+| executing                      | 0.000028 |
+| end                            | 0.000002 |
+| query end                      | 0.000002 |
+| waiting for handler commit     | 0.000006 |
+| closing tables                 | 0.000005 |
+| freeing items                  | 0.000007 |
+| cleaning up                    | 0.000006 |
++--------------------------------+----------+
+17 rows in set, 1 warning (0.01 sec)
+```
+```sql
+mysql> SHOW PROFILE FOR QUERY 1;
++---------------+----------+
+| Status        | Duration |
++---------------+----------+
+| starting      | 0.000340 |
+| freeing items | 0.000030 |
+| cleaning up   | 0.000007 |
++---------------+----------+
+3 rows in set, 1 warning (0.00 sec)
+```
+
 
 
 ## Задача 4
