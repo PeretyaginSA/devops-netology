@@ -102,6 +102,13 @@ INFO:  "orders": scanned 1 of 1 pages, containing 8 live rows and 0 dead rows; 8
 
 + `pg_stats`
 
+```bash
+test_database=# SELECT max(avg_width) FROM pg_stats WHERE tablename = 'orders';
+ max 
+-----
+  16
+(1 row)
+```
 
 
 
