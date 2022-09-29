@@ -58,6 +58,52 @@ docker run \
 **Приведите в ответе** команду, которую вы использовали для вычисления и полученный результат.
 
 
+***Ответ:***
+
++ Восстановление бэкапа
+```bash
+root@7f7313040e36:/# psql -U postgres test_database < backup/test_dump.sql
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+ALTER TABLE
+COPY 8
+ setval 
+--------
+      8
+(1 row)
+```
+
++ ANALYZE
+
+```bash
+test_database=# ANALYZE VERBOSE orders;
+INFO:  analyzing "public.orders"
+INFO:  "orders": scanned 1 of 1 pages, containing 8 live rows and 0 dead rows; 8 rows in sample, 8 estimated total rows
+```
+
++ `pg_stats`
+
+
+
 
 ## Задача 3
 
