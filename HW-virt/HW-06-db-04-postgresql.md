@@ -177,12 +177,12 @@ test_database=# select * from public.orders_2;
 
 `pg_dump -U postgres test_database > /backup/dump_test_database.sql`
 
-
-
-
-
-
-
+```sql
+CREATE TABLE public.orders (
+    id integer NOT NULL,
+    title character varying(80) NOT NULL UNIQUE,
+    price integer DEFAULT 0
+```
 
 
 
