@@ -124,8 +124,15 @@ test_database=# SELECT max(avg_width) FROM pg_stats WHERE tablename = 'orders';
 Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
 
 
+***Ответ:***
 
+CREATE TABLE orders_1 (CHECK (price > 499)) INHERITS (orders);
 
+INSERT INTO orders_1 SELECT * FROM orders WHERE price > 499;
+
+CREATE TABLE orders_2 (CHECK (price <= 499)) INHERITS (orders);
+
+INSERT INTO orders_2 SELECT * FROM orders WHERE price <= 499;
 
 ## Задача 4
 Используя утилиту `pg_dump` создайте бекап БД `test_database`.
