@@ -126,13 +126,16 @@ test_database=# SELECT max(avg_width) FROM pg_stats WHERE tablename = 'orders';
 
 ***Ответ:***
 
-CREATE TABLE orders_1 (CHECK (price > 499)) INHERITS (orders);
-
-INSERT INTO orders_1 SELECT * FROM orders WHERE price > 499;
-
-CREATE TABLE orders_2 (CHECK (price <= 499)) INHERITS (orders);
-
-INSERT INTO orders_2 SELECT * FROM orders WHERE price <= 499;
+```bash
+test_database=# CREATE TABLE orders_1 (CHECK (price > 499)) INHERITS (orders);
+CREATE TABLE
+test_database=# INSERT INTO orders_1 SELECT * FROM orders WHERE price > 499;
+INSERT 0 3
+test_database=# CREATE TABLE orders_2 (CHECK (price <= 499)) INHERITS (orders);
+CREATE TABLE
+test_database=# INSERT INTO orders_2 SELECT * FROM orders WHERE price <= 499;
+INSERT 0 5
+```
 
 ```sql
 test_database=# select * from public.orders_1;
