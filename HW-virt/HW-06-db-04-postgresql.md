@@ -124,6 +124,9 @@ test_database=# SELECT max(avg_width) FROM pg_stats WHERE tablename = 'orders';
 Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
 
 
+
+
+
 ***Ответ:***
 
 ```bash
@@ -158,7 +161,9 @@ test_database=# select * from public.orders_2;
 (5 rows)
 ```
 
+Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
 
+Да, если изначально подготовить таблицу к партиционированию
 
 
 ## Задача 4
@@ -167,7 +172,10 @@ test_database=# select * from public.orders_2;
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
 
 
+***Ответ:***
 
+
+`pg_dump -U postgres test_database > /backup/dump_test_database.sql`
 
 
 
