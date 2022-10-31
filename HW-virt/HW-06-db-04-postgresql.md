@@ -134,6 +134,30 @@ CREATE TABLE orders_2 (CHECK (price <= 499)) INHERITS (orders);
 
 INSERT INTO orders_2 SELECT * FROM orders WHERE price <= 499;
 
+```sql
+test_database=# select * from public.orders_1;
+ id |       title        | price 
+----+--------------------+-------
+  2 | My little database |   500
+  6 | WAL never lies     |   900
+  8 | Dbiezdmin          |   501
+(3 rows)
+```
+```sql
+test_database=# select * from public.orders_2;
+ id |        title         | price 
+----+----------------------+-------
+  1 | War and peace        |   100
+  3 | Adventure psql time  |   300
+  4 | Server gravity falls |   300
+  5 | Log gossips          |   123
+  7 | Me and my bash-pet   |   499
+(5 rows)
+```
+
+
+
+
 ## Задача 4
 Используя утилиту `pg_dump` создайте бекап БД `test_database`.
 
