@@ -177,6 +177,9 @@ test_database=# select * from public.orders_2;
 
 `pg_dump -U postgres test_database > /backup/dump_test_database.sql`
 
+
+Добавить уникальный индекс `UNIQUE`
+
 ```sql
 CREATE TABLE public.orders (
     id integer NOT NULL,
