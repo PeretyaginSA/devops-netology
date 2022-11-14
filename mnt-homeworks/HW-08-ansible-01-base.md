@@ -37,7 +37,7 @@
 ## Основная часть
 
 1.
-```ansible
+```sh
 root@ubuntu-virtual-machine:/home/ubuntu/HW-mnt/playbook# ansible-playbook -i inventory/test.yml site.yml 
 
 PLAY [Print os facts] **************************************************************************************************************
