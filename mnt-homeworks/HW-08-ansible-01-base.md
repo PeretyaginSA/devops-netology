@@ -147,4 +147,34 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 
 
 
-7.
+7. 8.
+```bash
+root@ubuntu-virtual-machine:/home/ubuntu/HW-mnt/playbook# ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass
+Vault password: 
+
+PLAY [Print os facts] **************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************
+ok: [ubuntu]
+ok: [centos7]
+
+TASK [Print OS] ********************************************************************************************************************
+ok: [ubuntu] => {
+    "msg": "Ubuntu"
+}
+ok: [centos7] => {
+    "msg": "CentOS"
+}
+
+TASK [Print fact] ******************************************************************************************************************
+ok: [centos7] => {
+    "msg": "el default fact"
+}
+ok: [ubuntu] => {
+    "msg": "deb default fact"
+}
+
+PLAY RECAP *************************************************************************************************************************
+centos7                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+```
