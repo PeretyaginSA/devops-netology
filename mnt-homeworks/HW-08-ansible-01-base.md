@@ -146,7 +146,6 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 ```
 
 
-
 7. 8.
 
 
@@ -185,7 +184,7 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 
 плагин `local`
 
-10.
+10. 11.
 ```bash
 root@ubuntu-virtual-machine:/home/ubuntu/HW-mnt/playbook# ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass
 Vault password: 
@@ -224,13 +223,3 @@ centos7                    : ok=3    changed=0    unreachable=0    failed=0    s
 localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
 ```
-
-
-
-
-
-
-
-
-
-
