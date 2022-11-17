@@ -2,7 +2,7 @@
 
 ## Вариант с Yandex.Cloud
 
-```bash
+```tf
 root@ubuntu-virtual-machine:/home/ubuntu/HW-terraform-7_2# terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
