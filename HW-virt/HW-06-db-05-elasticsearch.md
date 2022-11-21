@@ -110,7 +110,7 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/'
 
 ***Ответ:***
 
-Список индексов и их статусов:
+****Список индексов и их статусов:****
 ```bash
 root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/_cat/indices?'
 green  open ind-1                     XYFnhRL8SaKRnRwRYlVt3g 1 0  0 0   226b   226b
@@ -172,7 +172,7 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/_cluster
   "active_shards_percent_as_number" : 62.96296296296296
 ```
 
-Состояние кластера:
+****Состояние кластера:****
 
 ```bash
 root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/_cluster/health/?pretty=true'
@@ -194,11 +194,11 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/_cluster
   "active_shards_percent_as_number" : 62.96296296296296
   ```
   
-yellow — какие-то шарды отсутствуют/инициализируются, но оставшихся кластеру достаточно, чтобы собраться в консистентное состояние
+`yellow — какие-то шарды отсутствуют/инициализируются, но оставшихся кластеру достаточно, чтобы собраться в консистентное состояние`
 
 
 
-Удалени:
+****Удалени:****
 
 curl -X DELETE 'http://localhost:9200/ind-1?pretty'<br>
 curl -X DELETE 'http://localhost:9200/ind-2?pretty'<br>
