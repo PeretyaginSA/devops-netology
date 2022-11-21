@@ -241,4 +241,23 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X DELETE 'http://localhost:920
 + возможно вам понадобится доработать `elasticsearch.yml` в части директивы `path.repo` и перезапустить `elasticsearch`
 
 
+***Ответ:***
 
+
+1.
+
+root@3941133a3792:/usr/share/elasticsearch# curl -XPOST localhost:9200/_snapshot/netology_backup?pretty -H 'Content-Type: application/json' -d'{"type": "fs", "settings": { "location":"/usr/share/elasticsearch/snapshots" }}'
+{
+  "acknowledged" : true
+}
+
+2.
+
+`curl -X PUT localhost:9200/test -H 'Content-Type: application/json' -d'{ "settings": { "number_of_shards": 1,  "number_of_replicas": 0 }}'`
+```bash
+root@3941133a3792:/usr/share/elasticsearch# curl 'localhost:9200/_cat/indices?v&pretty'
+health status index                     uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  open   .geoip_databases          8mULwHuiQCCNXcB8fzvEAQ   1   0          3            0      2.6mb          2.6mb
+green  open   test                      OaeXEbN2S7-FdRXp-C7wMA   1   0          0            0       226b           226b
+green  open   .geoip_databases_restored 8aHXyYzFQ6yhkUmQC0EwYw   1   0         40            0     38.4mb         38.4mb
+```
