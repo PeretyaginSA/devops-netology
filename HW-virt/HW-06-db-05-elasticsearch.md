@@ -276,8 +276,9 @@ green  open   .geoip_databases_restored 8aHXyYzFQ6yhkUmQC0EwYw   1   0         4
 root@3941133a3792:/usr/share/elasticsearch# ls -l snapshots/
 total 40
 drwxrwxr-x 14 elasticsearch root  4096 Nov 21 15:29 indices
--rw-rw-r--  1 elasticsearch root 30142 Nov 21 15:29 meta-Vz-OSwSQRuK8S3EkK9yUEQ.dat
--rw-rw-r--  1 elasticsearch root  1576 Nov 21 15:29 snap-Vz-OSwSQRuK8S3EkK9yUEQ.dat
+-rw-rw-r--  1 elasticsearch root 30142 Nov 21 15:29 meta-aDbwUB6WSg6ATi8UCIYX4w.dat
+-rw-rw-r--  1 elasticsearch root  1606 Nov 21 15:29 snap-aDbwUB6WSg6ATi8UCIYX4w.dat
+
 ```
 
 4. Удалите индекс test и создайте индекс test-2
@@ -302,8 +303,17 @@ green  open   .geoip_databases_restored 8aHXyYzFQ6yhkUmQC0EwYw   1   0         4
 
 5. Восстановление
 
-`curl -X POST localhost:9200/_snapshot/netology_backup/elasticsearch/_restore?pretty -H 'Content-Type: application/json' -d'{"include_global_state":true}'`
 
+`curl -X POST "localhost:9200/_snapshot/netology_backup/elasticsearch/_restore?wait_for_completion=true&pretty" -H 'Content-Type: application/json' -d'{  "indices": "test",  "ignore_unavailable": true,  "include_global_state": false,  "rename_pattern": "index_(.+)",  "rename_replacement": "restored_index_$1",  "include_aliases": false}'`
+
+```bash
+root@3941133a3792:/usr/share/elasticsearch# curl 'localhost:9200/_cat/indices?v&pretty'
+health status index                     uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  open   test-2                    XT77GC4OQ9eeG99eDhAtUg   1   0          0            0       226b           226b
+green  open   .geoip_databases          8mULwHuiQCCNXcB8fzvEAQ   1   0          3            0      2.6mb          2.6mb
+green  open   test                      sbXFRGDfSIyXfUDZw5oOxQ   1   0          0            0       226b           226b
+green  open   .geoip_databases_restored 8aHXyYzFQ6yhkUmQC0EwYw   1   0         40            0     38.4mb         38.4mb
+```
 
 
 
