@@ -194,7 +194,22 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/_cluster
   "active_shards_percent_as_number" : 62.96296296296296
   ```
   
+yellow — какие-то шарды отсутствуют/инициализируются, но оставшихся кластеру достаточно, чтобы собраться в консистентное состояние
 
+
+
+Удалени:
+
+curl -X DELETE 'http://localhost:9200/ind-1?pretty'<br>
+curl -X DELETE 'http://localhost:9200/ind-2?pretty'<br>
+curl -X DELETE 'http://localhost:9200/ind-3?pretty'<br>
+
+```bash
+root@3941133a3792:/usr/share/elasticsearch# curl -X DELETE 'http://localhost:9200/ind-1?pretty'
+{
+  "acknowledged" : true
+}
+```
 
 ## Задача 3
 В данном задании вы научитесь:
