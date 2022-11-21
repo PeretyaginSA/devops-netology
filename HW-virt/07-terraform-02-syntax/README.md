@@ -2,6 +2,8 @@
 
 ## Вариант с Yandex.Cloud
 
+ami образ можно создать с помощью `packer`
+
 ```tf
 root@ubuntu-virtual-machine:/home/ubuntu/HW-terraform-7_2# terraform plan
 
