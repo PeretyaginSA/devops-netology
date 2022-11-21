@@ -55,6 +55,27 @@ RUN mkdir /var/lib/logs && \
 2. 
 `https://hub.docker.com/repository/docker/peretyaginsa/elastic`
 
+3.
+```json
+root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/'
+{
+  "name" : "netology_test",
+  "cluster_name" : "docker-cluster",
+  "cluster_uuid" : "gXgIlwiISf2A6qutsZJy4w",
+  "version" : {
+    "number" : "7.17.6",
+    "build_flavor" : "default",
+    "build_type" : "docker",
+    "build_hash" : "f65e9d338dc1d07b642e14a27f338990148ee5b6",
+    "build_date" : "2022-08-23T11:08:48.893373482Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.11.1",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
 
 ## Задача 2
 В этом задании вы научитесь:
