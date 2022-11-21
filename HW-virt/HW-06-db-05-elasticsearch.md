@@ -56,8 +56,10 @@ RUN mkdir /var/lib/logs && \
 `https://hub.docker.com/repository/docker/peretyaginsa/elastic`
 
 3.
-```json
+```bash
 root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/'
+```
+```json
 {
   "name" : "netology_test",
   "cluster_name" : "docker-cluster",
