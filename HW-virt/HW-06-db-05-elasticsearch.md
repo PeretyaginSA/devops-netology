@@ -245,13 +245,15 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X DELETE 'http://localhost:920
 
 
 1.
-
+```bash
 root@3941133a3792:/usr/share/elasticsearch# curl -XPOST localhost:9200/_snapshot/netology_backup?pretty -H 'Content-Type: application/json' -d'{"type": "fs", "settings": { "location":"/usr/share/elasticsearch/snapshots" }}'
 {
   "acknowledged" : true
 }
+```
 
-2.
+
+2.  индекс test
 
 `curl -X PUT localhost:9200/test -H 'Content-Type: application/json' -d'{ "settings": { "number_of_shards": 1,  "number_of_replicas": 0 }}'`
 ```bash
@@ -261,3 +263,47 @@ green  open   .geoip_databases          8mULwHuiQCCNXcB8fzvEAQ   1   0          
 green  open   test                      OaeXEbN2S7-FdRXp-C7wMA   1   0          0            0       226b           226b
 green  open   .geoip_databases_restored 8aHXyYzFQ6yhkUmQC0EwYw   1   0         40            0     38.4mb         38.4mb
 ```
+
+
+
+
+3.  Создание snapshot
+
+
+`curl -X PUT localhost:9200/_snapshot/netology_backup/elasticsearch?wait_for_completion=true`
+
+```bash
+root@3941133a3792:/usr/share/elasticsearch# ls -l snapshots/
+total 40
+drwxrwxr-x 14 elasticsearch root  4096 Nov 21 15:29 indices
+-rw-rw-r--  1 elasticsearch root 30142 Nov 21 15:29 meta-Vz-OSwSQRuK8S3EkK9yUEQ.dat
+-rw-rw-r--  1 elasticsearch root  1576 Nov 21 15:29 snap-Vz-OSwSQRuK8S3EkK9yUEQ.dat
+```
+
+4. Удалите индекс test и создайте индекс test-2
+
+```bash
+root@3941133a3792:/usr/share/elasticsearch# curl -X DELETE 'http://localhost:9200/test?pretty'
+{
+  "acknowledged" : true
+}
+```
+
+
+`curl -X PUT localhost:9200/test-2 -H 'Content-Type: application/json' -d'{ "settings": { "number_of_shards": 1,  "number_of_replicas": 0 }}'`
+
+```bash
+root@3941133a3792:/usr/share/elasticsearch# curl 'localhost:9200/_cat/indices?v&pretty'
+health status index                     uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  open   test-2                    lgfD_uWXRBOKGcJEL0Y2qw   1   0          0            0       226b           226b
+green  open   .geoip_databases          8mULwHuiQCCNXcB8fzvEAQ   1   0          3            0      2.6mb          2.6mb
+green  open   .geoip_databases_restored 8aHXyYzFQ6yhkUmQC0EwYw   1   0         40            0     38.4mb         38.4mb
+```
+
+5. Восстановление
+
+`curl -X POST localhost:9200/_snapshot/netology_backup/elasticsearch/_restore?pretty -H 'Content-Type: application/json' -d'{"include_global_state":true}'`
+
+
+
+
