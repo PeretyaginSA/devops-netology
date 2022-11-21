@@ -42,7 +42,8 @@
 
 ***Ответ***
 
-1. ```
+1.
+```
 FROM elasticsearch:7.17.7
 ADD elasticsearch.yml /usr/share/elasticsearch/config
 RUN mkdir /var/lib/logs && \
@@ -51,7 +52,8 @@ RUN mkdir /var/lib/logs && \
     chown elasticsearch:elasticsearch /var/lib/data
 ```
 
-2. `https://hub.docker.com/repository/docker/peretyaginsa/elastic`
+2. 
+`https://hub.docker.com/repository/docker/peretyaginsa/elastic`
 
 
 ## Задача 2
