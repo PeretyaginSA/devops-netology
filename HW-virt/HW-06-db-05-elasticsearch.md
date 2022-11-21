@@ -200,7 +200,7 @@ root@3941133a3792:/usr/share/elasticsearch# curl -X GET 'localhost:9200/_cluster
 
 ****Удалени:****
 
-`curl -X DELETE 'http://localhost:9200/ind-1?pretty'`br>
+`curl -X DELETE 'http://localhost:9200/ind-1?pretty'`<br>
 `curl -X DELETE 'http://localhost:9200/ind-2?pretty'`<br>
 `curl -X DELETE 'http://localhost:9200/ind-3?pretty'`<br>
 
