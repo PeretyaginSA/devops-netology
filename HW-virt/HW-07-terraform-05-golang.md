@@ -36,7 +36,7 @@ func main() {
 
 ***Ответ:***
 
-```golang
+```go
 package main
 
 import "fmt"
