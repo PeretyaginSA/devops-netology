@@ -34,6 +34,24 @@ func main() {
 }
 ```
 
+***Ответ:***
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Print("Enter a number: ")
+	var input float64
+	fmt.Scanf("%f", &input)
+
+	output := input / 0.3048
+
+	fmt.Println(output)
+}
+```
+
 2.Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
 
 ```
