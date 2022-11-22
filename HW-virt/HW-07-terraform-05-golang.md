@@ -46,17 +46,18 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("Enter a number: ")
+	fmt.Print("Enter the value in meters: ")
 	var input float64
 	fmt.Scanf("%f", &input)
 
 	output := input / 0.3048
 
-	fmt.Println(output)
+	fmt.Println("pl.feet =", output)
 }
 
-Enter a number: 5
-16.404199475065617
+> go run main.go
+Enter the value in meters: 3
+pl.feet = 9.84251968503937
 ```
 
 2.Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
