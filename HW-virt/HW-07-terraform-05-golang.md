@@ -55,7 +55,6 @@ func main() {
 	fmt.Println("pl.feet =", output)
 }
 
-> go run main.go
 Enter the value in meters: 3
 pl.feet = 9.84251968503937
 ```
