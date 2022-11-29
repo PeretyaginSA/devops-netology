@@ -2,7 +2,7 @@
 
 
 
-```yuml
+```bash
 root@bhdevops:/home/peretyaginsa/mnt-homeworks/08-ansible-02-playbook/playbook# ansible-playbook -i inventory/prod.yml site.yml 
 
 PLAY [Install Clickhouse] ******************************************************************************************************************************************************************************************************************************
