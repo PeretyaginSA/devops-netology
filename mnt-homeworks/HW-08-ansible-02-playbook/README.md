@@ -174,7 +174,9 @@ vector-01                  : ok=5    changed=0    unreachable=0    failed=0    s
 ```
 
 
-9. Установка clickhouse:<br>
+9.  
+
+Установка clickhouse:<br>
 Загрузка дистрибутива, первая ссылка некорректная скачивается по второй. Затем идет установка и создание базы. tags: clickhouse<br>
 
 Установка vector:<br>
