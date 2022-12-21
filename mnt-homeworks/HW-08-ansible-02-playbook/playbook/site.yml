@@ -66,3 +66,4 @@
         dest: /etc/vector/vector.toml
         mode: '0644'
   tags: vector
+
