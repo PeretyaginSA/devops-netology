@@ -1,4 +1,14 @@
 1
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/106968319/222173604-5e7942eb-ccc9-43ab-a7f7-2d6f5e456cb8.png)
+
+
+
+
 ```bash
 peretyaginsa@bhDevOps2:~/mnt-homeworks/08-ansible-03-yandex/playbook$ ansible-playbook -i inventory/prod.yml site.yml --diff
 
