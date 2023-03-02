@@ -11,3 +11,5 @@ lighthouse:
   hosts:
     lighthouse-01:
       ansible_host: 51.250.93.117
+
+
