@@ -331,20 +331,130 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
 
 #### 9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
 
-### clickhouse
-- установка
-- создание базы
-- tags: clickhouse
+```yaml
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  handlers:
+    - name: Start clickhouse service
+      become: true
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: restarted
+  tasks:
+    - block:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "/tmp/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+          with_items: "{{ clickhouse_packages }}"
+      rescue:
+        - name: Try to get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable//clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "/tmp/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+    - name: Install clickhouse packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - /tmp/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm
+          - /tmp/clickhouse-client-{{ clickhouse_version }}.noarch.rpm
+          - /tmp/clickhouse-server-{{ clickhouse_version }}.noarch.rpm
+      notify: Start clickhouse service
+    # - name: Start clickhouse service
+    #   become: true
+    #   ansible.builtin.service:
+    #     name: clickhouse-server
+    #     state: started
+    - name: Create database
+      command: "clickhouse-client -q 'create database logs;'"
+      register: create_db
+      failed_when: create_db.rc != 0 and create_db.rc !=82
+      changed_when: create_db.rc == 0
+      tags: clickhouse
 
-### vector
-- установка
-- настройка
-- tags: vector
+- name: Install vector
+  hosts: vector
+  handlers:
+    - name: Start Vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
+        state: restarted
+  tasks:
+    - name: Get vector distrib
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-1.x86_64.rpm"
+        dest: "/tmp/vector.rpm"
+    - name: Install vector
+      become: true
+      ansible.builtin.yum:
+        disable_gpg_check: true
+        name:
+          - /tmp/vector.rpm
+    - name: create vector dir
+      become: true
+      ansible.builtin.file:
+        path: /etc/vector
+        state: directory
+        mode: 0644
+    - name: copy vector_cfg from local to remote_src
+      become: true
+      ansible.builtin.template:
+        src: vector.j2
+        dest: /etc/vector/vector.toml
+        mode: 0644
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_gid }}"
+        validate: vector validate --no-environment --config-yaml %s
+    - name: install as a service start
+      become: true
+      template:
+        src: vector.service.j2
+        dest: /etc/systemd/system/vector.service
+        mode: 0644
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_gid }}"
+      notify: Start Vector service
+      tags: vector
 
-### lighthouse
-- установка
-- установка nginx
-- настройка nginx
-- tags: lighthouse
+- name: Install lighthouse
+  hosts: lighthouse
+  tasks:
+    - name: lighthouse distrib
+      become: true
+      ansible.builtin.get_url:
+        url: "{{ lighthouse }}"
+        dest: "/tmp/lighthouse.zip"
+    - name: Install package
+      become: true
+      ansible.builtin.yum:
+        name:
+          - epel-release
+          - unzip
+    - name: Install nginx
+      become: true
+      ansible.builtin.yum:
+        name:
+          - nginx
+    - name: unarchive lighthouse
+      become: true
+      ansible.builtin.unarchive:
+        src: /tmp/lighthouse.zip
+        dest: /usr/share/nginx
+        remote_src: yes
+    - name: nginx cfg
+      become: true
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        content: |
+          {{ nginx_cfg }}
+    - name: Start nginx
+      become: true
+      ansible.builtin.service:
+        name: nginx
+        state: started
+      tags: lighthouse
+```
 
 
