@@ -443,7 +443,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
         src: /tmp/lighthouse.zip
         dest: /usr/share/nginx
         remote_src: yes
-    - name: nginx cfg # Настройка nginx
+    - name: nginx cfg # Настройка nginx из group_vars lighthouse
       become: true
       ansible.builtin.copy:
         dest: /etc/nginx/conf.d/lighthouse.conf
@@ -456,5 +456,3 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
         state: started
       tags: lighthouse # Тег
 ```
-
-
