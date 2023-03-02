@@ -347,3 +347,4 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
 - настройка nginx
 - tags: lighthouse
 
+
