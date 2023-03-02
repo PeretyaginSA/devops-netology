@@ -34,12 +34,50 @@
 - установка nginx
 - настройка nginx
 
+#### 1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает lighthouse.
 
+- name: Install lighthouse
+  hosts: lighthouse
+  tasks:
+    - name: lighthouse distrib
+      become: true
+      ansible.builtin.get_url:
+        url: "{{ lighthouse }}"
+        dest: "/tmp/lighthouse.zip"
+    - name: Install package
+      become: true
+      ansible.builtin.yum:
+        name:
+          - epel-release
+          - unzip
+    - name: Install nginx
+      become: true
+      ansible.builtin.yum:
+        name:
+          - nginx
+    - name: unarchive lighthouse
+      become: true
+      ansible.builtin.unarchive:
+        src: /tmp/lighthouse.zip
+        dest: /usr/share/nginx
+        remote_src: yes
+    - name: nginx cfg
+      become: true
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        content: |
+          {{ nginx_cfg }}
+    - name: Start nginx
+      become: true
+      ansible.builtin.service:
+        name: nginx
+        state: started
+      tags: lighthouse
 
+#### 2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.
+Использовал `get_url` `template` `yum` `unarchive` `copy` `file`
 
-
-
-
+#### 3. Tasks должны: скачать статику lighthouse, установить nginx или любой другой webserver, настроить его конфиг для открытия lighthouse, запустить webserver.
 ![image](https://user-images.githubusercontent.com/106968319/222358804-cdf578a2-6b3b-477e-9d8d-0603cf38ec0d.png)
 
 
