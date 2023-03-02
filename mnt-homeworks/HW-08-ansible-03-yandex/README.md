@@ -19,20 +19,7 @@
 
 ***Ответ***
 
-### clickhouse
-- установка
-- создание базы
 
-
-### vector
-- установка
-- настройка
-
-
-### lighthouse
-- установка
-- установка nginx
-- настройка nginx
 
 #### 1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает lighthouse.
 
@@ -80,7 +67,7 @@
 Использовал `get_url` `template` `yum` `unarchive` `copy` `file`
 
 #### 3. Tasks должны: скачать статику lighthouse, установить nginx или любой другой webserver, настроить его конфиг для открытия lighthouse, запустить webserver.
-![image](https://user-images.githubusercontent.com/106968319/222358804-cdf578a2-6b3b-477e-9d8d-0603cf38ec0d.png)
+![image](https://user-images.githubusercontent.com/106968319/222416594-5e51c19c-f2e6-42e8-bb00-f97194f8a88c.png)
 
 #### 4. Приготовьте свой собственный inventory файл `prod.yml`.
 
@@ -342,5 +329,21 @@ lighthouse-01              : ok=7    changed=0    unreachable=0    failed=0    s
 vector-01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
 
+#### 9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
 
+### clickhouse
+- установка
+- создание базы
+- tags: clickhouse
+
+### vector
+- установка
+- настройка
+- tags: vector
+
+### lighthouse
+- установка
+- установка nginx
+- настройка nginx
+- tags: lighthouse
 
