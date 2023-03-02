@@ -39,8 +39,6 @@
       changed_when: create_db.rc == 0
       tags: clickhouse
 
-
-
 - name: Install vector
   hosts: vector
   handlers:
