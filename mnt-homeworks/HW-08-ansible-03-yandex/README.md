@@ -333,7 +333,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
 
 ```yaml
 ---
-- name: Install Clickhouse
+- name: Install Clickhouse # Установка Clickhouse
   hosts: clickhouse
   handlers:
     - name: Start clickhouse service
