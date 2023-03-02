@@ -335,7 +335,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
 ---
 - name: Install Clickhouse # Установка Clickhouse
   hosts: clickhouse
-  handlers:
+  handlers: # Для будующего рестарт сервиса clickhouse
     - name: Start clickhouse service
       become: true
       ansible.builtin.service:
@@ -343,56 +343,56 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
         state: restarted
   tasks:
     - block:
-        - name: Get clickhouse distrib
+        - name: Get clickhouse distrib # Загрузка дистрибутивов Clickhouse
           ansible.builtin.get_url:
             url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
             dest: "/tmp/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
           with_items: "{{ clickhouse_packages }}"
       rescue:
-        - name: Try to get clickhouse distrib
+        - name: Try to get clickhouse distrib # Загрузка дистрибутивов Clickhouse
           ansible.builtin.get_url:
             url: "https://packages.clickhouse.com/rpm/stable//clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
             dest: "/tmp/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
-    - name: Install clickhouse packages
+    - name: Install clickhouse packages # Установка дистрибутивов Clickhouse
       become: true
       ansible.builtin.yum:
         name:
           - /tmp/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm
           - /tmp/clickhouse-client-{{ clickhouse_version }}.noarch.rpm
           - /tmp/clickhouse-server-{{ clickhouse_version }}.noarch.rpm
-      notify: Start clickhouse service
+      notify: Start clickhouse service # Рестарт сервиса clickhouse
     # - name: Start clickhouse service
     #   become: true
     #   ansible.builtin.service:
     #     name: clickhouse-server
     #     state: started
-    - name: Create database
+    - name: Create database # Создание базы данных
       command: "clickhouse-client -q 'create database logs;'"
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc !=82
       changed_when: create_db.rc == 0
       tags: clickhouse
 
-- name: Install vector
+- name: Install vector # Установка vector
   hosts: vector
-  handlers:
+  handlers: # Для будующего рестарт сервиса vector
     - name: Start Vector service
       become: true
       ansible.builtin.service:
         name: vector
         state: restarted
   tasks:
-    - name: Get vector distrib
+    - name: Get vector distrib # Загрузка дистрибутива vector
       ansible.builtin.get_url:
         url: "https://packages.timber.io/vector/{{ vector_version }}/vector-1.x86_64.rpm"
         dest: "/tmp/vector.rpm"
-    - name: Install vector
+    - name: Install vector # Установка дистрибутива vector
       become: true
       ansible.builtin.yum:
         disable_gpg_check: true
         name:
           - /tmp/vector.rpm
-    - name: create vector dir
+    - name: create vector dir # Создании директории
       become: true
       ansible.builtin.file:
         path: /etc/vector
@@ -418,21 +418,21 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
       notify: Start Vector service
       tags: vector
 
-- name: Install lighthouse
+- name: Install lighthouse # Установка lighthouse
   hosts: lighthouse
   tasks:
-    - name: lighthouse distrib
+    - name: lighthouse distrib # Загрузка дистрибутива lighthouse
       become: true
       ansible.builtin.get_url:
         url: "{{ lighthouse }}"
         dest: "/tmp/lighthouse.zip"
-    - name: Install package
+    - name: Install package # Установка архиватора 
       become: true
       ansible.builtin.yum:
         name:
           - epel-release
           - unzip
-    - name: Install nginx
+    - name: Install nginx # Установка веб сервера
       become: true
       ansible.builtin.yum:
         name:
