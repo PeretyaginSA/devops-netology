@@ -371,7 +371,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc !=82
       changed_when: create_db.rc == 0
-      tags: clickhouse
+      tags: clickhouse # Тег
 
 - name: Install vector # Установка vector
   hosts: vector
@@ -416,7 +416,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
         owner: "{{ ansible_user_id }}"
         group: "{{ ansible_user_gid }}"
       notify: Start Vector service
-      tags: vector
+      tags: vector # Тег
 
 - name: Install lighthouse # Установка lighthouse
   hosts: lighthouse
@@ -439,22 +439,22 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
           - nginx
     - name: unarchive lighthouse
       become: true
-      ansible.builtin.unarchive:
+      ansible.builtin.unarchive: # Распаковка архива lighthouse
         src: /tmp/lighthouse.zip
         dest: /usr/share/nginx
         remote_src: yes
-    - name: nginx cfg
+    - name: nginx cfg # Настройка nginx
       become: true
       ansible.builtin.copy:
         dest: /etc/nginx/conf.d/lighthouse.conf
         content: |
           {{ nginx_cfg }}
-    - name: Start nginx
+    - name: Start nginx # Запуск сервиса
       become: true
       ansible.builtin.service:
         name: nginx
         state: started
-      tags: lighthouse
+      tags: lighthouse # Тег
 ```
 
 
