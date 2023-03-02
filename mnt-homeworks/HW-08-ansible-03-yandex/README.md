@@ -36,6 +36,7 @@
 
 #### 1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает lighthouse.
 
+```yaml
 - name: Install lighthouse
   hosts: lighthouse
   tasks:
@@ -73,6 +74,7 @@
         name: nginx
         state: started
       tags: lighthouse
+```
 
 #### 2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.
 Использовал `get_url` `template` `yum` `unarchive` `copy` `file`
