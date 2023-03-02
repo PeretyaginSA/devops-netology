@@ -1,6 +1,6 @@
 ---
 vector_version: "0.25.2"
-clickhouse_host: 51.250.67.38
+clickhouse_host: 62.84.112.29
 vector_config_path: /etc/vector/vector.yaml
 vector_config:
   sources:
