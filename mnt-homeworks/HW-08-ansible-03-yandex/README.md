@@ -34,7 +34,11 @@
 - установка nginx
 - настройка nginx
 
-![image](https://user-images.githubusercontent.com/106968319/222173604-5e7942eb-ccc9-43ab-a7f7-2d6f5e456cb8.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/106968319/222358804-cdf578a2-6b3b-477e-9d8d-0603cf38ec0d.png)
 
 
 
