@@ -82,11 +82,35 @@
 #### 3. Tasks должны: скачать статику lighthouse, установить nginx или любой другой webserver, настроить его конфиг для открытия lighthouse, запустить webserver.
 ![image](https://user-images.githubusercontent.com/106968319/222358804-cdf578a2-6b3b-477e-9d8d-0603cf38ec0d.png)
 
+#### 4. Приготовьте свой собственный inventory файл `prod.yml`.
 
+```yml
+---
+clickhouse:
+  hosts:
+    clickhouse-01:
+      ansible_host: 62.84.112.29
+vector:
+  hosts:
+    vector-01:
+      ansible_host: 158.160.45.47
+lighthouse:
+  hosts:
+    lighthouse-01:
+      ansible_host: 51.250.93.117
+```
 
+#### 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
 
 ```bash
-peretyaginsa@bhDevOps2:~/mnt-homeworks/08-ansible-03-yandex/playbook$ ansible-playbook -i inventory/prod.yml site.yml --diff
+
+```bash
+peretyaginsa@bhDevOps2:~/mnt-homeworks/08-ansible-03-yandex/playbook$ ansible-lint site.yml
+peretyaginsa@bhDevOps2:~/mnt-homeworks/08-ansible-03-yandex/playbook$ 
+```
+ошибок нет
+
+
 
 PLAY [Install Clickhouse] ***********************************************************************************************************************************************************************************************************************************************************************
 
