@@ -1,3 +1,4 @@
+lighthouse: https://github.com/VKCOM/lighthouse/archive/refs/heads/master.zip
 nginx_cfg: |-
   server {
       listen       80;
