@@ -76,15 +76,15 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: 62.84.112.29
+      ansible_host: 51.250.67.243
 vector:
   hosts:
     vector-01:
-      ansible_host: 158.160.45.47
+      ansible_host: 158.160.63.219
 lighthouse:
   hosts:
     lighthouse-01:
-      ansible_host: 51.250.93.117
+      ansible_host: 158.160.58.24
 ```
 
 #### 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
