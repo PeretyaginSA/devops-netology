@@ -21,24 +21,17 @@
             dest: "/tmp/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
     - name: Install clickhouse packages
       become: true
-      become_method: sudo
       ansible.builtin.yum:
         name:
           - /tmp/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm
           - /tmp/clickhouse-client-{{ clickhouse_version }}.noarch.rpm
           - /tmp/clickhouse-server-{{ clickhouse_version }}.noarch.rpm
       notify: Start clickhouse service
-    - name: Start clickhouse service
-      become: true
-      ansible.builtin.service:
-        name: clickhouse-server
-        state: started
-    - name: connections to clickhouse
-      become: true
-      ansible.builtin.lineinfile:
-        path: /etc/clickhouse-server/config.xml
-        regexp: <!-- <listen_host>::</listen_host> -->
-        line: <listen_host>::</listen_host>
+    # - name: Start clickhouse service
+    #   become: true
+    #   ansible.builtin.service:
+    #     name: clickhouse-server
+    #     state: started
     - name: Create database
       command: "clickhouse-client -q 'create database logs;'"
       register: create_db
@@ -61,7 +54,6 @@
         dest: "/tmp/vector.rpm"
     - name: Install vector
       become: true
-      become_method: sudo
       ansible.builtin.yum:
         disable_gpg_check: true
         name:
@@ -81,7 +73,7 @@
         owner: "{{ ansible_user_id }}"
         group: "{{ ansible_user_gid }}"
         validate: vector validate --no-environment --config-yaml %s
-    - name: install as a service and start
+    - name: install as a service start
       become: true
       template:
         src: vector.service.j2
@@ -95,19 +87,10 @@
 - name: Install lighthouse
   hosts: lighthouse
   tasks:
-    - name: Add clickhouse addresses to /etc/hosts
-      become: true
-      lineinfile:
-        dest: /etc/hosts
-        regexp: '.*{{ item }}$'
-        line: "{{ hostvars[item].ansible_host }} {{ item }}"
-        state: present
-      when: hostvars[item].ansible_host is defined
-      with_items: "{{ groups.clickhouse }}"
-    - name: Get lighthouse distrib
+    - name: lighthouse distrib
       become: true
       ansible.builtin.get_url:
-        url: "https://github.com/VKCOM/lighthouse/archive/refs/heads/master.zip"
+        url: "{{ lighthouse }}"
         dest: "/tmp/lighthouse.zip"
     - name: Install package
       become: true
@@ -137,3 +120,4 @@
       ansible.builtin.service:
         name: nginx
         state: started
+      tags: lighthouse
