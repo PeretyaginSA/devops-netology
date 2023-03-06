@@ -406,7 +406,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
         mode: 0644 # rw-r--r--
         owner: "{{ ansible_user_id }}"
         group: "{{ ansible_user_gid }}"
-        validate: vector validate --no-environment --config-yaml %s
+        validate: vector validate --no-environment --config-yaml %s # проверка конфига
     - name: install as a service start
       become: true
       template:
