@@ -397,13 +397,13 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
       ansible.builtin.file:
         path: /etc/vector
         state: directory
-        mode: 0644
+        mode: 0644 # rw-r--r--
     - name: copy vector_cfg from local to remote_src
       become: true
       ansible.builtin.template:
         src: vector.j2
         dest: /etc/vector/vector.toml
-        mode: 0644
+        mode: 0644 # rw-r--r--
         owner: "{{ ansible_user_id }}"
         group: "{{ ansible_user_gid }}"
         validate: vector validate --no-environment --config-yaml %s
@@ -412,7 +412,7 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
       template:
         src: vector.service.j2
         dest: /etc/systemd/system/vector.service
-        mode: 0644
+        mode: 0644 # rw-r--r--
         owner: "{{ ansible_user_id }}"
         group: "{{ ansible_user_gid }}"
       notify: Start Vector service
