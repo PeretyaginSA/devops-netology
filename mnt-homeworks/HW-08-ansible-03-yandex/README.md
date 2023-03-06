@@ -400,14 +400,14 @@ vector-01                  : ok=6    changed=0    unreachable=0    failed=0    s
         mode: 0644 # rw-r--r--
     - name: copy vector_cfg from local to remote_src
       become: true
-      ansible.builtin.template:
+      ansible.builtin.template: # копирование конфига, настройка прав
         src: vector.j2
         dest: /etc/vector/vector.toml
         mode: 0644 # rw-r--r--
         owner: "{{ ansible_user_id }}"
         group: "{{ ansible_user_gid }}"
         validate: vector validate --no-environment --config-yaml %s # проверка конфига
-    - name: install as a service start
+    - name: install as a service start # настройка службы
       become: true
       template:
         src: vector.service.j2
